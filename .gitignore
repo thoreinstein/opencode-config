@@ -1,0 +1,19 @@
+# Environment and secrets
+.env
+.env.*
+*.env
+
+# Package manager artifacts
+node_modules/
+package.json
+bun.lock
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+
+# Claude Code local settings (contains user-specific MCP prefs)
+.claude/
+
+# OpenCode local state/cache (if any)
+.opencode/
+*.local.json
