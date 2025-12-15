@@ -4,6 +4,7 @@
   "theme": "rosepine",
   "autoupdate": true,
   "agent": {},
+  "plugin": ["opencode-openai-codex-auth@4.1.0"],
   "mcp": {
     "context7": {
       "type": "remote",
