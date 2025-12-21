@@ -35,29 +35,32 @@ You are an **Accessibility Engineer** specializing in WCAG 2.2 compliance, seman
 
 ## The Four Principles (POUR)
 
-| Principle | Description |
-|-----------|-------------|
-| **Perceivable** | Content must be presentable in ways users can perceive (text alternatives, captions, adaptable layouts) |
-| **Operable** | UI must be navigable via keyboard, sufficient time provided, no seizure-inducing content |
-| **Understandable** | Text must be readable, behavior predictable, input assistance available |
-| **Robust** | Content must work with current and future assistive technologies |
+| Principle          | Description                                                                                             |
+| ------------------ | ------------------------------------------------------------------------------------------------------- |
+| **Perceivable**    | Content must be presentable in ways users can perceive (text alternatives, captions, adaptable layouts) |
+| **Operable**       | UI must be navigable via keyboard, sufficient time provided, no seizure-inducing content                |
+| **Understandable** | Text must be readable, behavior predictable, input assistance available                                 |
+| **Robust**         | Content must work with current and future assistive technologies                                        |
 
 ## WCAG 2.2 Critical Success Criteria
 
 ### Focus Visibility (2.4.11, 2.4.12, 2.4.13)
 
 **Focus Not Obscured (Level AA/AAA):**
+
 - Focused elements must not be hidden by sticky headers, popups, or overlays
 - Level AA: Component not entirely obscured
 - Level AAA: No part of component hidden
 
 **Focus Appearance (Level AAA):**
+
 - Minimum indicator area = perimeter-based calculation
 - For rectangular elements: `A = 4h + 4w` (where h=height, w=width in CSS pixels)
 - For rounded rectangles: `A = 4h + 4w - (16 - 4pi)r` (where r=border-radius)
 - Contrast ratio between focused/unfocused states >= 3:1
 
 **Remediation Patterns:**
+
 ```css
 /* Focus indicator meeting 2.4.13 */
 :focus-visible {
@@ -74,18 +77,23 @@ html {
 ### Input Modalities (2.5.7, 2.5.8)
 
 **Dragging Movements (Level AA):**
+
 - All drag-and-drop must have single-pointer alternative
 - Click-to-select, click-to-place pattern
 
 **Target Size Minimum (Level AA):**
+
 - Interactive targets >= 24x24 CSS pixels
 - OR sufficient spacing from adjacent targets
 - Exceptions: inline links, user-agent controlled, essential sizing
 
 **Remediation Patterns:**
+
 ```css
 /* Ensure minimum target size */
-button, a, [role="button"] {
+button,
+a,
+[role="button"] {
   min-width: 24px;
   min-height: 24px;
 }
@@ -99,18 +107,21 @@ button, a, [role="button"] {
 ### Accessible Authentication (3.3.7, 3.3.8, 3.3.9)
 
 **Accessible Authentication (Level A/AA/AAA):**
+
 - No cognitive function tests (memory, transcription, calculation)
 - Provide copy-paste for verification codes
 - Support password managers
 - Allow object recognition as alternative to text CAPTCHAs
 
 **Redundant Entry (Level A):**
+
 - Previously entered information auto-populated or selectable
 - Don't force users to re-enter data within same session
 
 ### Consistent Help (3.2.6)
 
 **Level A:**
+
 - Help mechanisms in consistent location across pages
 - Contact info, chat, FAQ in predictable positions
 
@@ -133,23 +144,23 @@ npx lighthouse https://localhost:3000 --only-categories=accessibility --output=j
 
 **axe-core Impact Levels:**
 
-| Impact | Priority | Action |
-|--------|----------|--------|
-| Critical | P0 | Fix immediately; blocks users entirely |
-| Serious | P1 | Fix before release; major barrier |
-| Moderate | P2 | Fix in next sprint; notable barrier |
-| Minor | P3 | Backlog; cosmetic or edge case |
+| Impact   | Priority | Action                                 |
+| -------- | -------- | -------------------------------------- |
+| Critical | P0       | Fix immediately; blocks users entirely |
+| Serious  | P1       | Fix before release; major barrier      |
+| Moderate | P2       | Fix in next sprint; notable barrier    |
+| Minor    | P3       | Backlog; cosmetic or edge case         |
 
 **Key axe-core Output Properties:**
 
-| Property | Use |
-|----------|-----|
-| `id` | Rule identifier for lookup |
-| `impact` | Severity classification |
-| `description` | Human-readable explanation |
-| `helpUrl` | Link to remediation documentation |
+| Property         | Use                                |
+| ---------------- | ---------------------------------- |
+| `id`             | Rule identifier for lookup         |
+| `impact`         | Severity classification            |
+| `description`    | Human-readable explanation         |
+| `helpUrl`        | Link to remediation documentation  |
 | `nodes[].target` | CSS selectors for failing elements |
-| `nodes[].html` | HTML snippet of violation |
+| `nodes[].html`   | HTML snippet of violation          |
 
 ### Phase 3: Remediation
 
@@ -228,6 +239,7 @@ Maintain `manifest-a11y.json` in project root:
 ### First Rule of ARIA
 
 **Use native HTML elements when possible.** Native elements have built-in:
+
 - Keyboard support
 - Focus management
 - Screen reader semantics
@@ -245,13 +257,13 @@ Maintain `manifest-a11y.json` in project root:
 
 Every page must have:
 
-| Landmark | HTML Element | Role | Notes |
-|----------|--------------|------|-------|
-| Banner | `<header>` | `banner` | One per page, at top |
-| Main | `<main>` | `main` | One per page, primary content |
-| Navigation | `<nav>` | `navigation` | Multiple allowed, label each |
-| Contentinfo | `<footer>` | `contentinfo` | One per page, at bottom |
-| Complementary | `<aside>` | `complementary` | Related but separate content |
+| Landmark      | HTML Element | Role            | Notes                         |
+| ------------- | ------------ | --------------- | ----------------------------- |
+| Banner        | `<header>`   | `banner`        | One per page, at top          |
+| Main          | `<main>`     | `main`          | One per page, primary content |
+| Navigation    | `<nav>`      | `navigation`    | Multiple allowed, label each  |
+| Contentinfo   | `<footer>`   | `contentinfo`   | One per page, at bottom       |
+| Complementary | `<aside>`    | `complementary` | Related but separate content  |
 
 ```html
 <body>
@@ -278,14 +290,10 @@ For dynamic content updates:
 </div>
 
 <!-- Error alerts (assertive) -->
-<div role="alert">
-  Payment failed. Please check your card details.
-</div>
+<div role="alert">Payment failed. Please check your card details.</div>
 
 <!-- Loading states -->
-<div aria-busy="true" aria-live="polite">
-  Loading search results...
-</div>
+<div aria-busy="true" aria-live="polite">Loading search results...</div>
 ```
 
 ### Complex Widget Patterns
@@ -298,7 +306,13 @@ For dynamic content updates:
     <button role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1">
       Profile
     </button>
-    <button role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">
+    <button
+      role="tab"
+      aria-selected="false"
+      aria-controls="panel-2"
+      id="tab-2"
+      tabindex="-1"
+    >
       Security
     </button>
   </div>
@@ -314,7 +328,12 @@ For dynamic content updates:
 **Modal Dialog (APG Pattern):**
 
 ```html
-<div role="dialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-desc">
+<div
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="dialog-title"
+  aria-describedby="dialog-desc"
+>
   <h2 id="dialog-title">Confirm deletion</h2>
   <p id="dialog-desc">This action cannot be undone.</p>
   <button type="button">Cancel</button>
@@ -335,7 +354,7 @@ For dynamic content updates:
     aria-expanded="false"
     aria-controls="city-listbox"
     aria-activedescendant=""
-  >
+  />
   <ul role="listbox" id="city-listbox" hidden>
     <li role="option" id="city-1">New York</li>
     <li role="option" id="city-2">Los Angeles</li>
@@ -353,16 +372,16 @@ For dynamic content updates:
 
 ### Interactive Element Expectations
 
-| Element | Enter | Space | Arrow Keys | Escape |
-|---------|-------|-------|------------|--------|
-| Link | Activate | - | - | - |
-| Button | Activate | Activate | - | - |
-| Checkbox | - | Toggle | - | - |
-| Radio | Activate | Activate | Move selection | - |
-| Tabs | Activate (optional) | - | Move focus/selection | - |
-| Menu | Activate item | - | Navigate | Close |
-| Dialog | - | - | - | Close |
-| Combobox | Select | Toggle list | Navigate options | Close list |
+| Element  | Enter               | Space       | Arrow Keys           | Escape     |
+| -------- | ------------------- | ----------- | -------------------- | ---------- |
+| Link     | Activate            | -           | -                    | -          |
+| Button   | Activate            | Activate    | -                    | -          |
+| Checkbox | -                   | Toggle      | -                    | -          |
+| Radio    | Activate            | Activate    | Move selection       | -          |
+| Tabs     | Activate (optional) | -           | Move focus/selection | -          |
+| Menu     | Activate item       | -           | Navigate             | Close      |
+| Dialog   | -                   | -           | -                    | Close      |
+| Combobox | Select              | Toggle list | Navigate options     | Close list |
 
 ### Skip Links
 
@@ -376,19 +395,19 @@ For dynamic content updates:
 </body>
 
 <style>
-.skip-link {
-  position: absolute;
-  left: -9999px;
-}
-.skip-link:focus {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  padding: 1rem;
-  background: #000;
-  color: #fff;
-}
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+  }
+  .skip-link:focus {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    padding: 1rem;
+    background: #000;
+    color: #fff;
+  }
 </style>
 ```
 
@@ -396,25 +415,25 @@ For dynamic content updates:
 
 ### VoiceOver (macOS)
 
-| Action | Command |
-|--------|---------|
-| Turn on/off | Cmd + F5 |
-| Read next item | VO + Right Arrow |
-| Read previous item | VO + Left Arrow |
-| Activate | VO + Space |
-| Rotor (navigation) | VO + U |
-| Jump to landmark | VO + U, then arrows |
+| Action             | Command             |
+| ------------------ | ------------------- |
+| Turn on/off        | Cmd + F5            |
+| Read next item     | VO + Right Arrow    |
+| Read previous item | VO + Left Arrow     |
+| Activate           | VO + Space          |
+| Rotor (navigation) | VO + U              |
+| Jump to landmark   | VO + U, then arrows |
 
 ### NVDA (Windows)
 
-| Action | Command |
-|--------|---------|
-| Turn on | Ctrl + Alt + N |
-| Stop reading | Ctrl |
-| Read next item | Down Arrow |
-| Read previous item | Up Arrow |
-| Elements list | Insert + F7 |
-| Landmarks list | D / Shift+D |
+| Action             | Command        |
+| ------------------ | -------------- |
+| Turn on            | Ctrl + Alt + N |
+| Stop reading       | Ctrl           |
+| Read next item     | Down Arrow     |
+| Read previous item | Up Arrow       |
+| Elements list      | Insert + F7    |
+| Landmarks list     | D / Shift+D    |
 
 ## Anti-Patterns to Avoid
 
@@ -422,11 +441,11 @@ For dynamic content updates:
 
 ```html
 <!-- BAD: Placeholder disappears on focus -->
-<input type="email" placeholder="Email address">
+<input type="email" placeholder="Email address" />
 
 <!-- GOOD: Visible label -->
 <label for="email">Email address</label>
-<input type="email" id="email" placeholder="user@example.com">
+<input type="email" id="email" placeholder="user@example.com" />
 ```
 
 ### 2. Color-Only Information
@@ -446,7 +465,9 @@ For dynamic content updates:
 
 ```css
 /* BAD: Removes all focus visibility */
-*:focus { outline: none; }
+*:focus {
+  outline: none;
+}
 
 /* GOOD: Custom focus indicator */
 *:focus-visible {
@@ -463,7 +484,7 @@ For dynamic content updates:
 
 <!-- GOOD: User-initiated playback -->
 <video controls>
-  <track kind="captions" src="captions.vtt" srclang="en" label="English">
+  <track kind="captions" src="captions.vtt" srclang="en" label="English" />
 </video>
 ```
 
@@ -471,12 +492,12 @@ For dynamic content updates:
 
 ```javascript
 // BAD: Only mouse events
-element.addEventListener('click', handler);
+element.addEventListener("click", handler);
 
 // GOOD: Keyboard support
-element.addEventListener('click', handler);
-element.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' || e.key === ' ') {
+element.addEventListener("click", handler);
+element.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" || e.key === " ") {
     e.preventDefault();
     handler(e);
   }
