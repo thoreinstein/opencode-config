@@ -6,6 +6,27 @@
   "agent": {},
   "plugin": ["opencode-openai-codex-auth@4.1.0"],
   "mcp": {
+    "figma": {
+      "enabled": true,
+      "type": "remote",
+      "url": "http://127.0.0.1:3845/mcp"
+    },
+    "terraform": {
+      "enabled": true,
+      "type": "local",
+      "command": [
+        "docker",
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "TFE_TOKEN",
+        "hashicorp/terraform-mcp-server"
+      ],
+      "environment": {
+        "TFE_TOKEN": "{env:TFE_TOKEN}"
+      }
+    },
     "context7": {
       "type": "remote",
       "url": "https://mcp.context7.com/mcp",
@@ -24,27 +45,57 @@
     },
     "playwright": {
       "type": "local",
-      "command": ["npx", "@playwright/mcp@latest"]
+      "command": ["docker", "run", "-i", "--rm", "mcp/playwright"]
     },
     "github": {
       "type": "remote",
-      "url": "https://api.githubcopilot.com/mcp",
+      "url": "https://api.githubcopilot.com/mcp/",
       "headers": {
-        "Authorization": "Bearer {env:GITHUB_PAT}"
+        "Authorization": "Bearer {env:GITHUB_PERSONAL_ACCESS_TOKEN}"
       }
     },
-    "trello": {
+    "time": {
       "type": "local",
-      "command": ["npx", "@delorenj/mcp-server-trello"],
+      "command": ["docker", "run", "-i", "--rm", "mcp/time"]
+    },
+    "sequentialthinking": {
+      "type": "local",
+      "command": ["docker", "run", "-i", "--rm", "mcp/sequentialthinking"]
+    },
+    "obsidian": {
+      "type": "local",
+      "command": [
+        "docker",
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "OBSIDIAN_HOST",
+        "-e",
+        "OBSIDIAN_API_KEY",
+        "mcp/obsidian"
+      ],
       "environment": {
-        "TRELLO_API_KEY": "{env:TRELLO_API_KEY}",
-        "TRELLO_TOKEN": "{env:TRELLO_TOKEN}"
+        "OBSIDIAN_HOST": "host.docker.internal",
+        "OBSIDIAN_API_KEY": "{env:OBSIDIAN_API_KEY}"
       }
+    },
+    "memory": {
+      "type": "local",
+      "command": [
+        "docker",
+        "run",
+        "-i",
+        "--rm",
+        "-v",
+        "/Users/myers/.local/state/memory_mcp:/app/dist",
+        "mcp/memory"
+      ]
     }
   },
   "permission": {
-    "edit": "ask",
-    "bash": "ask",
+    "edit": "allow",
+    "bash": "allow",
     "webfetch": "allow"
   }
 }
