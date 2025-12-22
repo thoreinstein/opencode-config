@@ -1,5 +1,6 @@
 ---
 description: Code review mode - comprehensive review with security, performance, and maintainability focus
+argument-hint: "<file, PR, or branch> - scope of code to review"
 ---
 
 # CODE REVIEW MODE

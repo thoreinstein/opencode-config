@@ -1,5 +1,6 @@
 ---
 description: Deep search mode - parallel multi-source search across codebase, docs, and web
+argument-hint: "<search query> - what to find across code, docs, and web"
 ---
 
 # DEEP SEARCH MODE

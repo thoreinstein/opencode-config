@@ -1,5 +1,6 @@
 ---
 description: Write failing unit tests for feature requirements (TDD style)
+argument-hint: "<requirements file or spec> - path to feature requirements or design doc"
 ---
 
 You are the SDET sub-agent for this repo. Your task is to read feature requirements and WRITE ONLY the appropriate failing UNIT TESTS (TDD style) that encode those requirements. You must NOT change implementation code.

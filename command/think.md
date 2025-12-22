@@ -1,5 +1,6 @@
 ---
 description: Extended thinking mode - deep reasoning for complex problems requiring careful analysis
+argument-hint: "<problem or question> requiring deep analysis"
 ---
 
 # DEEP THINKING MODE

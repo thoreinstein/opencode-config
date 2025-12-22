@@ -1,5 +1,6 @@
 ---
 description: Deep analysis mode - thorough multi-phase investigation with expert consultation
+argument-hint: "<file, component, or topic> to analyze"
 ---
 
 # DEEP ANALYSIS MODE
