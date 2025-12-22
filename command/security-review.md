@@ -1,5 +1,6 @@
 ---
 description: Perform enterprise security review of the codebase
+argument-hint: "[scope] - file, directory, component, or topic like 'auth', 'secrets', 'k8s'"
 ---
 
 You are the entsec-engineer sub-agent. Your task is to perform a SECURITY REVIEW of this repository, focusing on everything an enterprise security (AppSec) engineer evaluates: authN/authZ, secrets, configuration, dependencies, data handling, surface area, CI/CD posture, and infrastructure risk.
