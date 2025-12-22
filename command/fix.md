@@ -132,7 +132,7 @@ Search for similar bugs in past projects:
 
 ```typescript
 const failurePatterns = await readJSON(
-  "/Users/besi/Code/memory/failure_patterns.json",
+  "$MEMORY_PATH/failure_patterns.json",
 );
 
 // Search for patterns matching:
@@ -1099,7 +1099,7 @@ UserRepository was loading User entities without eager loading the Subscription 
 
 **Evaluate**: Is this bug reusable knowledge for other projects?
 
-**Write to `/Users/besi/Code/memory/failure_patterns.json`**:
+**Write to `$MEMORY_PATH/failure_patterns.json`**:
 
 ```json
 {
