@@ -1,31 +1,32 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "",
+  "model": "github-copilot/claude-opus-4.5",
+  "small_model": "github-copilot/claude-haiku-4.5",
   "theme": "rosepine",
-  "autoupdate": true,
-  "agent": {},
-  "plugin": ["opencode-openai-codex-auth@4.1.0"],
+  "plugin": [
+    "@tarquinen/opencode-dcp@latest",
+    "@tarquinen/opencode-smart-title",
+    "@simonwjackson/opencode-direnv",
+    "@howaboua/opencode-roadmap-plugin",
+    "@franlol/opencode-md-table-formatter",
+    "opencode-skills"
+  ],
+  "default_agent": "plan",
+  "share": "disabled",
+  "autoupdate": false,
+  "keybinds": {
+    "leader": "ctrl+b"
+  },
+  "tui": {
+    "scroll_acceeleration": {
+      "enabled": true
+    }
+  },
   "mcp": {
     "figma": {
       "enabled": true,
       "type": "remote",
       "url": "http://127.0.0.1:3845/mcp"
-    },
-    "terraform": {
-      "enabled": true,
-      "type": "local",
-      "command": [
-        "docker",
-        "run",
-        "-i",
-        "--rm",
-        "-e",
-        "TFE_TOKEN",
-        "hashicorp/terraform-mcp-server"
-      ],
-      "environment": {
-        "TFE_TOKEN": "{env:TFE_TOKEN}"
-      }
     },
     "context7": {
       "type": "remote",
@@ -39,10 +40,6 @@
       "type": "local",
       "command": ["npx", "-y", "chrome-devtools-mcp@latest"]
     },
-    "applemusic": {
-      "type": "local",
-      "command": ["uvx", "-p", "3.13", "-n", "mcp-applemusic"]
-    },
     "playwright": {
       "type": "local",
       "command": ["docker", "run", "-i", "--rm", "mcp/playwright"]
@@ -54,9 +51,32 @@
         "Authorization": "Bearer {env:GITHUB_PERSONAL_ACCESS_TOKEN}"
       }
     },
+    "grep_app": {
+      "type": "remote",
+      "url": "https://mcp.grep.app",
+      "enabled": true
+    },
+    "exa": {
+      "type": "remote",
+      "url": "https://mcp.exa.ai/mcp?tools=web_search_exa",
+      "enabled": true
+    },
     "time": {
       "type": "local",
       "command": ["docker", "run", "-i", "--rm", "mcp/time"]
+    },
+    "memory": {
+      "type": "local",
+      "command": [
+        "docker",
+        "run",
+        "-i",
+        "--rm",
+        "-v",
+        "{env:HOME}/.local/state/memory:/data",
+        "mcp/memory"
+      ],
+      "enabled": true
     },
     "sequentialthinking": {
       "type": "local",
@@ -79,23 +99,17 @@
         "OBSIDIAN_HOST": "host.docker.internal",
         "OBSIDIAN_API_KEY": "{env:OBSIDIAN_API_KEY}"
       }
-    },
-    "memory": {
-      "type": "local",
-      "command": [
-        "docker",
-        "run",
-        "-i",
-        "--rm",
-        "-v",
-        "/Users/myers/.local/state/memory_mcp:/app/dist",
-        "mcp/memory"
-      ]
     }
   },
   "permission": {
     "edit": "allow",
     "bash": "allow",
     "webfetch": "allow"
-  }
+  },
+  "instructions": [
+    "AGENTS.md",
+    "CONTRIBUTING.md",
+    "LLM_INSTRUCTIONS.md",
+    "docs/*.md"
+  ]
 }
