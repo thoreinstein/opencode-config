@@ -161,7 +161,7 @@ description: >-
 
   </example>
 mode: primary
-temperature: 0.1
+temperature: 0.2
 tools:
   bash: true
   edit: true
