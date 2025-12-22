@@ -1,3 +1,4 @@
+!agent/*.md
 # Environment and secrets
 .env
 .env.*
