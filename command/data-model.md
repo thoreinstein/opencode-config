@@ -1,3 +1,8 @@
+---
+description: Generate comprehensive data model documentation with ERD, DTOs, and data flow diagrams
+argument-hint: "[scope] - optional focus area (e.g., 'users', 'orders', 'auth')"
+---
+
 # Data Model Generation Command
 
 Create comprehensive Entity Relationship Diagrams (ERDs) and data documentation for the current project.

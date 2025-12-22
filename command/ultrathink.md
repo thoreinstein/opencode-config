@@ -1,7 +1,6 @@
 ---
-description: Deep analysis and problem solving mode
-category: utilities-debugging
-argument-hint: "Identify all stakeholders and constraints"
+description: Ultra-deep multi-perspective analysis for complex architectural and strategic decisions
+argument-hint: "<problem or question> - architectural decisions, scaling strategies, technology choices"
 ---
 
 # Deep Analysis and Problem Solving Mode

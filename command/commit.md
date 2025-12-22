@@ -1,5 +1,6 @@
 ---
-description: Analyze unstaged changes and suggest an atomic staging order
+description: Analyze unstaged changes and suggest atomic commit groups with messages
+argument-hint: "[optional focus] - e.g., 'frontend only', 'exclude tests'"
 ---
 
 I need to make small, logical, atomic commits based on my current work.

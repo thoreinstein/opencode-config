@@ -1,5 +1,5 @@
 ---
-description: Analyze database queries and recommend missing indexes
+description: Analyze database queries and recommend missing indexes with performance impact analysis
 argument-hint: Optional - specific tables or queries to analyze
 ---
 
