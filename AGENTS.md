@@ -39,11 +39,6 @@
 
 ## Git Rules
 
-### Staging
-
-- **Always use `git add -p`.** Never `git add .`.
-- Stage exact hunks for small atomic commits.
-
 ### Commits and Pushes
 
 - **Never commit unless explicitly told.** Stage only.
@@ -79,4 +74,3 @@
 ### Never Delete
 
 - Never delete branches or worktrees. Archive via SRE tool only.
-
