@@ -47,6 +47,7 @@ Before declaring code complete:
 - [ ] No secrets in code or logs
 - [ ] Race condition safety (`go test -race`)
 - [ ] Error messages don't leak sensitive info
+- [ ] All error messages are checked
 
 ## Anti-Patterns
 
