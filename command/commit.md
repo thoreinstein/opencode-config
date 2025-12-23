@@ -17,3 +17,5 @@ Please analyze these changes and suggest a plan to stage and commit them in a lo
 2. For each group, list the specific files (or hunks, if applicable) to stage.
 3. Provide a suggested commit message for each group.
 4. If there are dependencies (e.g., File A must be committed before File B), please note them.
+
+$ARGUMENTS

@@ -66,3 +66,5 @@ Please implement comprehensive SEO optimizations for the specified target:
 - `semantic-html-seo-improvement`
 
 Please analyze the current state, implement missing optimizations, and document all changes according to the standards above.
+
+$ARGUMENTS

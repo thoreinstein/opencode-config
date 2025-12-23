@@ -157,3 +157,5 @@ Transform the frontend into a pixel-perfect, industry-standard implementation th
 - `component-polish-microinteractions`
 
 **Focus:** Every pixel matters. Transform basic frontend into industry-leading, pixel-perfect implementation that addresses all common frontend issues systematically.
+
+$ARGUMENTS

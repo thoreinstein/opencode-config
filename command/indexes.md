@@ -33,3 +33,5 @@ Scan whole codebase and tell me what indexes are missing.
 - `slow-query-investigation`
 
 Please analyze all database queries, identify missing indexes, and document recommendations according to the standards above.
+
+$ARGUMENTS

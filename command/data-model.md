@@ -517,3 +517,5 @@ async create(data: CreateUserData): Promise<User> {
 ✅ Validation rules included for all data structures
 ✅ Technology stack auto-detected and documented
 ✅ File is well-organized and easy to navigate
+
+$ARGUMENTS
