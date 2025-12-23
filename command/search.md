@@ -100,6 +100,19 @@ For complex searches:
 | "Examples of W"        | librarian (grep.app + context7)   |
 | "Why does V behave..." | explore + librarian + git history |
 
+## Output
+
+Write to Obsidian via `obsidian_append_content` at:
+`$OBSIDIAN_PATH/Searches/YYYY-MM-DD-query.md`
+
+> **Note**: `$OBSIDIAN_PATH` is set per-project via direnv.
+
+### Document Structure
+
+Use this template for the Obsidian document:
+
+@~/.config/opencode/templates/search-results.md
+
 ## Search Query
 
 $ARGUMENTS

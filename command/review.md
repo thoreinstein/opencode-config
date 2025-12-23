@@ -126,6 +126,19 @@ For specific concerns:
 [Brief performance impact analysis]
 ```
 
+## Output
+
+Write to Obsidian via `obsidian_append_content` at:
+`$OBSIDIAN_PATH/Reviews/YYYY-MM-DD-target.md`
+
+> **Note**: `$OBSIDIAN_PATH` is set per-project via direnv.
+
+### Document Structure
+
+Use this template for the Obsidian document:
+
+@~/.config/opencode/templates/code-review.md
+
 ## Review Scope
 
 $ARGUMENTS

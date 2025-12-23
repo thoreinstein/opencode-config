@@ -59,3 +59,18 @@ Constraints:
 - When in doubt, err on the side of clarity and structure so a human can quickly follow your findings.
 
 Begin by interpreting the argument to this command as a research question about the repo, then drive the research process using appropriate research agents and repo tools.
+
+## Output
+
+Write to Obsidian via `obsidian_append_content` at:
+`$OBSIDIAN_PATH/Research/YYYY-MM-DD-topic.md`
+
+> **Note**: `$OBSIDIAN_PATH` is set per-project via direnv.
+
+### Document Structure
+
+Use this template for the Obsidian document:
+
+@~/.config/opencode/templates/research-findings.md
+
+$ARGUMENTS

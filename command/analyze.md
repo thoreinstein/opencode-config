@@ -119,6 +119,19 @@ Combine findings into actionable output:
 | **Maintainability** | Readability, coupling, documentation    |
 | **Testability**     | Coverage, mocking, isolation            |
 
+## Output
+
+Write to Obsidian via `obsidian_append_content` at:
+`$OBSIDIAN_PATH/Analysis/YYYY-MM-DD-target.md`
+
+> **Note**: `$OBSIDIAN_PATH` is set per-project via direnv.
+
+### Document Structure
+
+Use this template for the Obsidian document:
+
+@~/.config/opencode/templates/analysis-report.md
+
 ## Analyze
 
 $ARGUMENTS

@@ -56,3 +56,18 @@ Constraints:
 - Keep the report structured, direct, and actionable.
 
 Begin by resolving the scope argument (if provided), then perform the full entsec security review according to this workflow.
+
+## Output
+
+Write to Obsidian via `obsidian_append_content` at:
+`$OBSIDIAN_PATH/Security/YYYY-MM-DD-target.md`
+
+> **Note**: `$OBSIDIAN_PATH` is set per-project via direnv.
+
+### Document Structure
+
+Use this template for the Obsidian document:
+
+@~/.config/opencode/templates/security-audit.md
+
+$ARGUMENTS
