@@ -149,7 +149,20 @@ Deep analysis and problem solving mode
 - **Inversion**: Consider what to avoid, not just what to do
 - **Second-Order Thinking**: Consider consequences of consequences
 
-## Output Expectations
+## Output
+
+Write to Obsidian via `obsidian_append_content` at:
+`$OBSIDIAN_PATH/Thinking/YYYY-MM-DD-ultrathink-topic.md`
+
+> **Note**: `$OBSIDIAN_PATH` is set per-project via direnv.
+
+### Document Structure
+
+Use this template for the Obsidian document:
+
+@~/.config/opencode/templates/thinking-session.md
+
+### Output Expectations
 
 - Comprehensive analysis (typically 2-4 pages of insights)
 - Multiple viable solutions with trade-offs
@@ -157,3 +170,5 @@ Deep analysis and problem solving mode
 - Acknowledgment of uncertainties
 - Actionable recommendations
 - Novel insights or perspectives
+
+$ARGUMENTS

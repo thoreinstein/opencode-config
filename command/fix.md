@@ -131,9 +131,7 @@ Deep analysis of architecture to understand bug context:
 Search for similar bugs in past projects:
 
 ```typescript
-const failurePatterns = await readJSON(
-  "$MEMORY_PATH/failure_patterns.json",
-);
+const failurePatterns = await readJSON("$MEMORY_PATH/failure_patterns.json");
 
 // Search for patterns matching:
 const similarBugs = failurePatterns.filter((pattern) => {
@@ -189,38 +187,9 @@ Collect comprehensive information about the bug:
 
 Use semantic bug ID slugs (e.g., `payment-processing-failure`, `ui-state-sync-issue`, `database-connection-timeout`)
 
-```markdown
-# Bug Context: [Bug Name]
+Use this template:
 
-## User Report
-
-- **Description**: [User description]
-- **Steps to Reproduce**: [Steps]
-- **Expected**: [Expected behavior]
-- **Actual**: [Actual behavior]
-- **Error**: [Error message/stack trace]
-
-## Architecture Context (from data-model.md)
-
-- **Affected Entities**: [Database entities involved]
-- **Data Flow**: [UI → API → Service → Database path]
-- **Related Components**: [Services, controllers, components]
-
-## Technology Stack
-
-- Database: [Detected database]
-- Backend: [Detected backend framework]
-- Frontend: [Detected frontend framework]
-- State Management: [Detected state library]
-
-## Recent Changes
-
-- [List recent commits affecting this area]
-
-## Similar Known Issues
-
-- [List from cross-project memory]
-```
+@~/.config/opencode/templates/fix-context.md
 
 ## Phase 2: Diagnostic Instrumentation (10-15 min)
 
@@ -443,59 +412,9 @@ Save all diagnostic logs following documentation standards:
 - **Frontend bugs:** `docs/tasks/frontend/DD-MM-YYYY/<semantic-bug-id>/diagnostic-logs.md`
 - **Backend bugs:** `docs/tasks/backend/DD-MM-YYYY/<semantic-bug-id>/diagnostic-logs.md`
 
-````markdown
-# Diagnostic Logs
+Use this template:
 
-## Timeline of Events
-
-### T+0ms: API Request Received
-
-```json
-{
-  "method": "POST",
-  "path": "/api/subscriptions",
-  "body": {...}
-}
-```
-````
-
-### T+15ms: Validation Passed
-
-```json
-{
-  "isValid": true,
-  "dto": {...}
-}
-```
-
-### T+23ms: Database Query Executed
-
-```json
-{
-  "query": "SELECT * FROM users WHERE id = $1",
-  "executionTime": "8ms",
-  "rowCount": 1
-}
-```
-
-### T+45ms: ERROR OCCURRED
-
-```json
-{
-  "error": "Cannot read property 'subscription_id' of undefined",
-  "stack": "...",
-  "context": {...}
-}
-```
-
-## Key Observations
-
-- User record exists in database
-- Subscription relationship NOT loaded
-- No eager loading configured
-- N+1 query pattern detected
-
-````
+@~/.config/opencode/templates/fix-diagnostic-logs.md
 
 ### Step 3.3: Analyze Diagnostic Data
 Review logs to identify patterns:
@@ -705,116 +624,9 @@ Cross-reference distilled hypotheses with diagnostic logs:
 
 **STOP HERE** - Do NOT implement fix until user confirms
 
-````markdown
-## 🔍 Bug Diagnosis Report
+Use this template for the diagnosis report:
 
-### Bug Summary
-
-**Issue**: Payment processing fails for subscription users
-**Error**: `Cannot read property 'subscription_id' of undefined`
-**Frequency**: 100% reproducible
-**Impact**: Critical - blocking all subscription payments
-
----
-
-### 🎯 Root Cause Identified
-
-**Primary Cause: N+1 Query Pattern (90% confidence)**
-
-**Explanation**:
-The UserRepository loads User entities without their Subscription relationships. When the PaymentService tries to access `user.subscription.subscription_id`, the subscription is `undefined` because it was never loaded from the database.
-
-**Evidence**:
-
-1. Diagnostic logs show User query executed, but no Subscription query
-2. Architecture analysis (data-model.md) confirms no eager loading configured
-3. Cross-project memory shows identical pattern from previous project (n1-query-user-relations-2025-08)
-4. Error occurs exactly when accessing unloaded relationship
-
-**Architecture Context** (from data-model.md):
-
-```typescript
-// Current implementation (BROKEN)
-const user = await userRepository.findById(userId);
-// user.subscription is undefined - relationship not loaded!
-const subscriptionId = user.subscription.subscription_id; // ❌ ERROR
-
-// Expected implementation
-const user = await userRepository.findById(userId, {
-  include: { subscription: true },
-});
-const subscriptionId = user.subscription.subscription_id; // ✅ WORKS
-```
-````
-
----
-
-### 🔧 Proposed Fix
-
-**Location**: `src/repositories/user.repository.ts`
-**Change**: Add eager loading for subscription relationship
-
-```diff
-async findById(userId: string) {
-  return await this.db.user.findUnique({
-    where: { id: userId },
-+   include: {
-+     subscription: true
-+   }
-  });
-}
-```
-
-**Alternative Fix** (if performance concern):
-Add explicit method for payment context:
-
-```typescript
-async findByIdWithSubscription(userId: string) {
-  return await this.db.user.findUnique({
-    where: { id: userId },
-    include: { subscription: true }
-  });
-}
-```
-
----
-
-### ⚠️ Secondary Concern
-
-**Missing null check** (defensive measure):
-Even with fix, should handle case where user has no subscription:
-
-```typescript
-if (!user.subscription) {
-  throw new ValidationError("User does not have an active subscription");
-}
-```
-
----
-
-### 📊 Diagnostic Data Location
-
-Full diagnostic logs saved to:
-
-- `/docs/tasks/fixs/26-10-2025/subscription-payment-failure/diagnostic-logs.md`
-- `/docs/tasks/fixs/26-10-2025/subscription-payment-failure/context.md`
-
----
-
-### ❓ Confirmation Required
-
-**Does this diagnosis match your understanding of the issue?**
-
-Options:
-
-1. ✅ **Yes, proceed with fix** - Implement the proposed solution
-2. 🔄 **Need more data** - Add additional diagnostics
-3. ❌ **Diagnosis seems wrong** - Re-analyze with different approach
-4. 💬 **Have additional context** - Share and re-evaluate
-
-Please confirm before I proceed with the fix.
-
-````
+@~/.config/opencode/templates/fix-diagnosis-report.md
 
 ### Step 5.2: Wait for User Response
 
@@ -1057,43 +869,9 @@ Create resolution document following documentation standards:
 - **Frontend bugs:** `docs/tasks/frontend/DD-MM-YYYY/<semantic-bug-id>/resolution.md`
 - **Backend bugs:** `docs/tasks/backend/DD-MM-YYYY/<semantic-bug-id>/resolution.md`
 
-```markdown
-# Bug Resolution: Subscription Payment Failure
+Use this template:
 
-## Summary
-Fixed N+1 query pattern causing undefined access to subscription relationship in payment processing.
-
-## Root Cause
-UserRepository was loading User entities without eager loading the Subscription relationship. When PaymentService accessed `user.subscription.subscription_id`, the subscription was undefined.
-
-## Fix Implemented
-1. Added eager loading to UserRepository.findById()
-2. Added defensive null check in PaymentService
-3. Updated tests to verify relationship loading
-4. Documented pattern in data-model.md
-
-## Files Changed
-- `src/repositories/user.repository.ts` (lines 25-30) - Added eager loading
-- `src/services/payment.service.ts` (lines 45-47) - Added null check
-- `src/repositories/user.repository.test.ts` (new test)
-- `src/services/payment.service.test.ts` (new test)
-- `docs/architecture/data-model.md` (lines 156-165) - Documented pattern
-
-## Testing
-- ✅ Unit tests passing (47/47)
-- ✅ Integration tests passing (12/12)
-- ✅ Manual verification successful
-- ✅ No regressions detected
-
-## Performance Impact
-- Minimal - same query count, better result structure
-- No additional database round trips
-
-## Prevention
-- Updated repository query pattern documentation
-- Added tests for relationship loading
-- Documented in data-model.md for future reference
-````
+@~/.config/opencode/templates/fix-resolution.md
 
 ### Step 8.3: Write to Cross-Project Memory
 
@@ -1477,3 +1255,5 @@ This command integrates with:
 ---
 
 **Ready to diagnose and fix bugs with systematic, evidence-based approach!** 🔍
+
+$ARGUMENTS

@@ -146,6 +146,19 @@ At completion, provide:
 [Follow-up tasks if any]
 ```
 
+## Output
+
+Write to Obsidian via `obsidian_append_content` at:
+`$OBSIDIAN_PATH/Implementations/YYYY-MM-DD-feature-name.md`
+
+> **Note**: `$OBSIDIAN_PATH` is set per-project via direnv.
+
+### Document Structure
+
+Use this template for the Obsidian document:
+
+@~/.config/opencode/templates/implementation-summary.md
+
 ## Implement
 
 $ARGUMENTS

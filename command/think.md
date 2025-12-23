@@ -74,42 +74,18 @@ Before implementing, plan verification:
 - What manual verification is needed?
 - What could we monitor in production?
 
-## Thinking Output
+## Output
 
-```markdown
-## Problem Understanding
+Write to Obsidian via `obsidian_append_content` at:
+`$OBSIDIAN_PATH/Thinking/YYYY-MM-DD-topic.md`
 
-[Restate the problem in your own words]
-[Identify constraints and success criteria]
+> **Note**: `$OBSIDIAN_PATH` is set per-project via direnv.
 
-## Analysis
+### Document Structure
 
-[Walk through the problem systematically]
-[Consider alternatives and tradeoffs]
+Use this template for the Obsidian document:
 
-## Edge Cases
-
-[List edge cases and how to handle]
-
-## Recommendation
-
-[Your chosen approach with rationale]
-[Why alternatives were rejected]
-
-## Implementation Plan
-
-1. [Step 1]
-2. [Step 2]
-   ...
-
-## Verification Plan
-
-[How to confirm correctness]
-
-## Open Questions
-
-[Any remaining uncertainties]
-```
+@~/.config/opencode/templates/thinking-session.md
 
 ## Thinking Principles
 
