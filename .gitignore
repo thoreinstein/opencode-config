@@ -18,3 +18,4 @@ pnpm-lock.yaml
 # OpenCode local state/cache (if any)
 .opencode/
 *.local.json
+roadmap*.json
