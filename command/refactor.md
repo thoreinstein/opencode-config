@@ -1,6 +1,9 @@
-# /refactor - Refactoring Analysis
+---
+description: "Analyze code and suggest refactoring opportunities with rationale"
+argument-hint: "<file, directory, or function/component name> [concern]"
+---
 
-## Purpose
+# Refactoring Analysis
 
 Analyze code and suggest refactoring opportunities with rationale. Documents findings to Obsidian for tracking and discussion.
 
@@ -65,80 +68,9 @@ Write to Obsidian via `obsidian_append_content` at:
 
 ### Document Structure
 
-```markdown
-# Refactoring Analysis: [Target Name]
+Use this template for the Obsidian document:
 
-## Target
-
-- **Path**: [file/directory path]
-- **Scope**: [file | directory | function | component]
-- **Concern**: [specific concern if provided, or "general analysis"]
-
-## Summary
-
-[One paragraph overview of findings and recommendations]
-
-## Code Smells Identified
-
-### [Smell 1 Name]
-
-- **Location**: `file:line`
-- **Description**: [What the smell is]
-- **Impact**: [Why it matters]
-
-### [Smell 2 Name]
-
-- **Location**: `file:line`
-- **Description**: [What the smell is]
-- **Impact**: [Why it matters]
-
-## Suggested Refactorings
-
-### 1. [Refactoring Name]
-
-- **Type**: [Extract | Inline | Rename | Move | etc.]
-- **Target**: `file:line` or `function/component name`
-- **Description**: [What to do]
-- **Rationale**: [Why this improves the code]
-- **Blast Radius**: [Files/functions affected]
-- **Risk**: [Low | Medium | High] — [Risk explanation]
-- **Test Impact**: [Tests that need updating]
-
-### 2. [Refactoring Name]
-
-- **Type**: [Extract | Inline | Rename | Move | etc.]
-- **Target**: `file:line` or `function/component name`
-- **Description**: [What to do]
-- **Rationale**: [Why this improves the code]
-- **Blast Radius**: [Files/functions affected]
-- **Risk**: [Low | Medium | High] — [Risk explanation]
-- **Test Impact**: [Tests that need updating]
-
-## Recommended Order of Operations
-
-1. [First refactoring] — [Why first: lowest risk, enables others, etc.]
-2. [Second refactoring] — [Why second]
-3. [Third refactoring] — [Why third]
-
-## Dependencies & Blast Radius
-
-### Call Sites
-
-- [List of files/functions that call the target]
-
-### Dependencies
-
-- [List of dependencies the target relies on]
-
-### Test Coverage
-
-- [Current coverage assessment]
-- [Tests that exercise the target code]
-
-## Notes
-
-[Additional context, caveats, or considerations]
-```
+@~/.config/opencode/templates/refactor-analysis.md
 
 ## Behavior
 
@@ -150,3 +82,5 @@ Write to Obsidian via `obsidian_append_content` at:
 6. Generate refactoring suggestions with risk assessment
 7. Recommend order of operations based on risk and dependencies
 8. Write analysis to Obsidian via `obsidian_append_content` with auto-generated filename: `YYYY-MM-DD-target-name.md`
+
+$ARGUMENTS

@@ -1,6 +1,9 @@
-# /debug - Structured Debugging Workflow
+---
+description: "Guide systematic debugging through hypothesis generation and verification"
+argument-hint: "<problem statement with symptoms, error messages, reproduction steps>"
+---
 
-## Purpose
+# Structured Debugging Workflow
 
 Guide systematic debugging through hypothesis generation, investigation, and verification. Documents findings to Obsidian for knowledge retention.
 
@@ -46,6 +49,7 @@ Launch parallel investigation tracks:
 ### 2. Hypothesis Generation
 
 Generate ranked hypotheses based on:
+
 - Probability (how likely is this the cause?)
 - Testability (how easy to verify/falsify?)
 - Recent changes (correlation with deployments)
@@ -54,6 +58,7 @@ Generate ranked hypotheses based on:
 ### 3. Investigation Plan
 
 For each hypothesis:
+
 - What evidence would confirm it?
 - What evidence would refute it?
 - What's the fastest way to test?
@@ -81,114 +86,9 @@ Write to Obsidian via `obsidian_append_content` at:
 
 ### Document Structure
 
-```markdown
-# Debug Session: [Issue Title]
+Use this template for the Obsidian document:
 
-## Problem Statement
-
-### Expected Behavior
-
-[What should happen]
-
-### Actual Behavior
-
-[What actually happens]
-
-### Reproduction Steps
-
-1. [Step]
-2. [Step]
-3. [Step]
-
-### Environment
-
-- **Environment**: [dev/staging/prod]
-- **Version**: [commit/tag/release]
-- **Frequency**: [always/intermittent/rare]
-- **First Observed**: [date/time]
-
-## Context
-
-### Recent Changes
-
-- [Relevant deployments or changes]
-
-### Related Errors/Logs
-
-```
-[Relevant error messages or log snippets]
-```
-
-### Metrics
-
-[Relevant metric observations]
-
-## Hypotheses
-
-### H1: [Hypothesis Title] — Probability: [High/Medium/Low]
-
-**Description**: [What might be happening]
-
-**Evidence For**:
-- [Supporting observation]
-
-**Evidence Against**:
-- [Contradicting observation]
-
-**Test Plan**:
-- [ ] [How to verify/falsify]
-
-**Status**: [Untested/Testing/Confirmed/Refuted]
-
-### H2: [Hypothesis Title] — Probability: [High/Medium/Low]
-
-[Same format]
-
-## Investigation Log
-
-### [YYYY-MM-DD HH:MM] [Action]
-
-[What was done and what was found]
-
-### [YYYY-MM-DD HH:MM] [Action]
-
-[What was done and what was found]
-
-## Findings
-
-### Root Cause
-
-[Confirmed root cause with evidence]
-
-### Contributing Factors
-
-- [Factor 1]
-- [Factor 2]
-
-### Code Locations
-
-| File | Line | Issue |
-|------|------|-------|
-| [file] | [line] | [description] |
-
-## Resolution
-
-### Fix Description
-
-[What was done to fix it]
-
-### Verification
-
-- [ ] [How the fix was verified]
-
-### Prevention
-
-- [ ] [Action to prevent recurrence]
-
-## Lessons Learned
-
-[Key takeaways for future debugging]
-```
+@~/.config/opencode/templates/debug-session.md
 
 ## Behavior
 
@@ -199,3 +99,5 @@ Write to Obsidian via `obsidian_append_content` at:
 5. Create investigation plan for top hypotheses
 6. Document evidence and investigation log
 7. Write debug session to Obsidian via `obsidian_append_content` with auto-generated filename: `YYYY-MM-DD-HHMM-issue-title.md`
+
+$ARGUMENTS

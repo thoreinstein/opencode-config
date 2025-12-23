@@ -1,6 +1,9 @@
-# /incident - Incident Triage & Response
+---
+description: "Analyze production incidents and generate prioritized triage checklists"
+argument-hint: "<symptoms, error messages, affected systems>"
+---
 
-## Purpose
+# Incident Triage & Response
 
 Analyze a production incident and generate a prioritized triage checklist. Writes findings to Obsidian incident log.
 
@@ -44,61 +47,9 @@ Write to Obsidian via `obsidian_append_content` at:
 
 ### Document Structure
 
-```markdown
-# Incident: [YYYY-MM-DD-HHMM] [Brief Title]
+Use this template for the Obsidian document:
 
-## Severity: P[1-4]
-
-[Justification for classification]
-
-## Summary
-
-[One paragraph synthesis of the problem and initial findings]
-
-## Findings
-
-### External Context
-
-- [Known issues, CVEs, dependency problems from librarian]
-
-### Codebase Investigation
-
-- [Suspect code paths with file:line references]
-- [Recent relevant commits with SHAs]
-
-### Code Analysis
-
-- [Identified failure modes]
-- [Error handling gaps]
-
-## Triage Checklist
-
-- [ ] [Specific diagnostic step based on findings]
-- [ ] [Specific verification step]
-- [ ] ...
-
-## Mitigation Options (ranked by speed-to-recovery)
-
-1. [Option with safety assessment]
-2. [Option with safety assessment]
-
-## Communication Checklist
-
-- [ ] Incident declared at P[X]
-- [ ] Stakeholders notified
-- [ ] Status updates scheduled
-
-## Resolution Verification
-
-- [ ] [Specific metric to watch]
-- [ ] [User flow to verify]
-- [ ] [Monitoring for recurrence]
-
-## Timeline
-
-- [HH:MM] Incident reported
-- [HH:MM] Investigation started
-```
+@~/.config/opencode/templates/incident-triage.md
 
 ## Behavior
 
@@ -109,3 +60,5 @@ Write to Obsidian via `obsidian_append_content` at:
 5. Generate customized checklist with specific file:line references
 6. Rank mitigation options by speed-to-recovery
 7. Write incident document to Obsidian via `obsidian_append_content` with auto-generated filename: `YYYY-MM-DD-HHMM-brief-title.md`
+
+$ARGUMENTS
