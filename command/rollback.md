@@ -1,6 +1,7 @@
 ---
 description: "Analyze deployment or change for rollback safety and generate checklist"
 argument-hint: "<deployment, commit SHA, release tag, or PR> [reason]"
+model: github-copilot/gpt-5.1-codex-max
 ---
 
 # Rollback Analysis & Checklist

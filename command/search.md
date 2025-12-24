@@ -1,6 +1,7 @@
 ---
 description: Deep search mode - parallel multi-source search across codebase, docs, and web
 argument-hint: "<search query> - what to find across code, docs, and web"
+model: github-copilot/gpt-5.1-codex-max
 ---
 
 # DEEP SEARCH MODE

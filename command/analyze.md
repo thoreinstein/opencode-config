@@ -1,6 +1,7 @@
 ---
 description: Deep analysis mode - thorough multi-phase investigation with expert consultation
 argument-hint: "<file, component, or topic> to analyze"
+model: github-copilot/gpt-5.1-codex-max
 ---
 
 # DEEP ANALYSIS MODE

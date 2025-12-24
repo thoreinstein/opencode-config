@@ -1,6 +1,7 @@
 ---
 description: "Generate deployment checklist with pre-flight checks and rollout strategy"
 argument-hint: "<service> to <environment> [deployment strategy]"
+model: github-copilot/gpt-5.1-codex-max
 ---
 
 # Deployment Checklist & Pre-flight

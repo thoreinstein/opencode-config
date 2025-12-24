@@ -1,6 +1,7 @@
 ---
 description: "Analyze production incidents and generate prioritized triage checklists"
 argument-hint: "<symptoms, error messages, affected systems>"
+model: github-copilot/gpt-5.1-codex-max
 ---
 
 # Incident Triage & Response

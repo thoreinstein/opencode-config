@@ -1,6 +1,7 @@
 ---
 description: Code review mode - comprehensive review with security, performance, and maintainability focus
 argument-hint: "<file, PR, or branch> - scope of code to review"
+model: github-copilot/gpt-5.1-codex-max
 ---
 
 # CODE REVIEW MODE

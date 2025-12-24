@@ -1,6 +1,7 @@
 ---
 description: "Generate blameless postmortem with root cause analysis"
 argument-hint: "<incident reference or summary> [resolution details]"
+model: github-copilot/gpt-5.1-codex-max
 ---
 
 # Post-Incident Review

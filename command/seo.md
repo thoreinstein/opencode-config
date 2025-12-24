@@ -1,6 +1,7 @@
 ---
 description: Implement SEO optimizations for specified pages or entire site
 argument-hint: Page path or "all" for entire site
+model: github-copilot/gpt-5.1-codex-max
 ---
 
 # SEO Optimization Command

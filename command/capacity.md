@@ -1,6 +1,7 @@
 ---
 description: "Analyze service capacity, load patterns, and scaling requirements"
 argument-hint: "<service, cluster, or infrastructure component>"
+model: github-copilot/gpt-5.1-codex-max
 ---
 
 # Capacity Planning Analysis

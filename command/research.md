@@ -1,6 +1,7 @@
 ---
 description: Research the codebase to find and explain specific topics
 argument-hint: "<topic or question> - e.g., 'how does auth work?', 'where is Stripe configured?'"
+model: github-copilot/gpt-5.1-codex-max
 ---
 
 You are acting as a research-focused assistant for this repo. Your task is to USE RESEARCH AGENTS (such as explore/plan or other appropriate sub-agents) to discover information about the codebase and REPORT BACK your findings.

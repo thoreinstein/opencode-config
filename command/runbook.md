@@ -1,6 +1,7 @@
 ---
 description: "Generate operational runbooks for services, procedures, or incident response"
 argument-hint: "<service or operation> [scope: deployment|scaling|failover|maintenance|troubleshooting]"
+model: github-copilot/gpt-5.1-codex-max
 ---
 
 # Operational Runbook Generator

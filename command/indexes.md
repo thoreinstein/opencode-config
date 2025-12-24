@@ -1,6 +1,7 @@
 ---
 description: Analyze database queries and recommend missing indexes with performance impact analysis
 argument-hint: Optional - specific tables or queries to analyze
+model: github-copilot/gpt-5.1-codex-max
 ---
 
 # Database Index Analysis
