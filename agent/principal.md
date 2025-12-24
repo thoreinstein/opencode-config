@@ -1,4 +1,5 @@
 ---
+model: anthropic/claude-opus-4-5
 description: >-
   Senior principal engineer for complex architectural decisions, debugging after
   2+ failed attempts, unfamiliar patterns, security-critical code review, and

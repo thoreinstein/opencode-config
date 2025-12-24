@@ -1,4 +1,5 @@
 ---
+model: anthropic/claude-opus-4-5
 description: >-
   Use this agent when the user needs help with frontend development, UI/UX
   design, component architecture, or visual polish. This includes creating

@@ -1,4 +1,5 @@
 ---
+model: anthropic/claude-opus-4-5
 description: >-
   Use this agent for unit testing Go backends and JavaScript frontends.
   Appropriate for API handlers, services, React components, hooks, and

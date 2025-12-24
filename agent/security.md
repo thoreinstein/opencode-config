@@ -1,4 +1,5 @@
 ---
+model: anthropic/claude-opus-4-5
 description: >-
   Application security review for OWASP Top 10 and CVE analysis. Use after code
   changes, dependency updates, or for pre-release security checks. Focuses on

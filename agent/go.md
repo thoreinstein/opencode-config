@@ -1,4 +1,5 @@
 ---
+model: anthropic/claude-opus-4-5
 description: >-
   Use this agent when you need expert-level Go engineering across systems,
   tooling, and APIs—especially when designing or implementing production-grade

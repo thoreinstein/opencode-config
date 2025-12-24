@@ -1,4 +1,5 @@
 ---
+model: anthropic/claude-opus-4-5
 description: >-
   Use this agent when you need to design, implement, review, or stabilize
   end-to-end (E2E) test automation in Go using Ginkgo/Gomega and Playwright,
