@@ -232,7 +232,7 @@ func CheckRateLimit(ctx context.Context, key string, limit int, window time.Dura
 When producing Redis design artifacts, write to Obsidian via `obsidian_append_content` at:
 `$OBSIDIAN_PATH/Infrastructure/Redis/YYYY-MM-DD-topic.md`
 
-> **Note**: `$OBSIDIAN_PATH` is set per-project via direnv.
+> **Note**: `$OBSIDIAN_PATH` must be a vault-relative path (e.g., `Projects/myapp`), set per-project via direnv. The `obsidian_append_content` tool expects paths relative to the vault root.
 
 ### Document Structure
 
