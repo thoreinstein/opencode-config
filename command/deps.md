@@ -1,6 +1,7 @@
 ---
 description: "Analyze dependencies for security vulnerabilities, outdated packages, and license compliance"
 argument-hint: "[full | security | updates | licenses] [specific package]"
+model: github-copilot/gpt-5.1-mini
 ---
 
 # Dependency Analysis & Management

@@ -1,6 +1,7 @@
 ---
 description: "Guide systematic debugging through hypothesis generation and verification"
 argument-hint: "<problem statement with symptoms, error messages, reproduction steps>"
+model: github-copilot/claude-haiku-4.5
 ---
 
 # Structured Debugging Workflow
