@@ -1,4 +1,5 @@
 ---
+model: github-copilot/gpt-5.1-codex-max
 description: >-
   Use this agent for platform reliability, SLO design, incident management, and
   operational excellence. Appropriate for cloud/Kubernetes production systems,

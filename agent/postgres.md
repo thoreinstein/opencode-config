@@ -1,4 +1,5 @@
 ---
+model: github-copilot/gpt-5.1-codex-max
 description: >-
   PostgreSQL expertise for schema design, query optimization, indexing,
   migrations, performance tuning, replication, and Go integration (pgx, sqlc).

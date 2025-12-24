@@ -1,4 +1,5 @@
 ---
+model: github-copilot/gpt-5.1-codex-max
 description: >-
   Use this agent when working with secrets management infrastructure, GCP Secret
   Manager configuration, external-secrets-operator (ESO) setup and

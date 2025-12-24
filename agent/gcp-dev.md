@@ -1,4 +1,5 @@
 ---
+model: github-copilot/gpt-5.1-codex-max
 description: >-
   Use this agent for GCP application development: Cloud Run, GKE, Cloud Functions,
   Pub/Sub, Cloud SQL, Firestore. Appropriate for designing cloud-native apps,

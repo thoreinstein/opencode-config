@@ -1,4 +1,5 @@
 ---
+model: github-copilot/gpt-5.1-codex-max
 description: >-
   Use this agent when designing new APIs, reviewing existing API contracts,
   establishing API standards, or improving developer experience for API

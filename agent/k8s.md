@@ -1,4 +1,5 @@
 ---
+model: github-copilot/gpt-5.1-codex-max
 description: >-
   Senior-level Kubernetes expertise for cluster operations and application
   delivery. Use for Helm charts, Kustomize, GKE/EKS operations, diagnostics,

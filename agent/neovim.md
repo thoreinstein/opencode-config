@@ -1,4 +1,5 @@
 ---
+model: github-copilot/gpt-5.1-codex-max
 description: >-
   Neovim configuration expertise in Lua. Use for plugin selection, init.lua
   structure, LSP setup, keymaps, performance tuning, and Vimscript migration.

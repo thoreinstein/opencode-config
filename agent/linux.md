@@ -1,4 +1,5 @@
 ---
+model: github-copilot/gpt-5.1-codex-max
 description: >-
   Expert Linux system administration, Docker containerization, Bash scripting,
   and Git operations. Use for Dockerfiles, shell scripts, system debugging,

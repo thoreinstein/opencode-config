@@ -1,4 +1,5 @@
 ---
+model: github-copilot/gpt-5.1-codex-max
 description: >-
   Use this agent when you need expert-level guidance, decisions, or reviews
   related to designing, migrating, securing, or optimizing solutions on Google

@@ -1,4 +1,5 @@
 ---
+model: github-copilot/gpt-5.1-codex-max
 description: >-
   Use this agent when working with Redis databases, including designing data
   structures, implementing caching strategies, optimizing performance,

@@ -1,4 +1,5 @@
 ---
+model: github-copilot/gpt-5.1-codex-max
 description: >-
   Use this agent for Terraform architecture, module design, code review, and
   governance at scale. Appropriate for multi-account setups, state management,

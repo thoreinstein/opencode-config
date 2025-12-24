@@ -1,4 +1,5 @@
 ---
+model: github-copilot/gpt-5.1-codex-max
 description: >-
   Use this agent when you need to find specific code patterns, implementations,
   function definitions, usages, or structures within a codebase. Deploy 2-3
