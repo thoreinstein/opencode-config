@@ -1,6 +1,7 @@
 ---
 description: Diagnose and fix bugs with architecture-aware analysis and diagnostic-first approach
 argument-hint: Bug description or error message
+model: anthropic/claude-opus-4-5
 ---
 
 # Bug Diagnosis and Fix Command
@@ -417,20 +418,24 @@ Use this template:
 @~/.config/opencode/templates/fix-diagnostic-logs.md
 
 ### Step 3.3: Analyze Diagnostic Data
+
 Review logs to identify patterns:
 
 **Data Flow Analysis**:
+
 - Where does data enter the system?
 - How is it transformed at each layer?
 - Where does the error first occur?
 - What data is missing or malformed?
 
 **Timing Analysis**:
+
 - Performance bottlenecks identified?
 - Timeout issues?
 - Race conditions?
 
 **State Analysis**:
+
 - What is the state before error?
 - What state change triggers error?
 - Is state synchronized across layers?
@@ -445,8 +450,10 @@ Based on diagnostic data, architecture analysis, and cross-project memory, gener
 ## Hypothesis Generation
 
 ### Hypothesis 1: N+1 Query Problem
+
 **Likelihood**: 🔴 High
 **Evidence**:
+
 - Diagnostic logs show sequential queries
 - User entity loaded without relationships
 - Performance degrades with more records
@@ -458,8 +465,10 @@ Based on diagnostic data, architecture analysis, and cross-project memory, gener
 ---
 
 ### Hypothesis 2: Missing Validation
+
 **Likelihood**: 🟡 Medium
 **Evidence**:
+
 - Error occurs after validation passes
 - Null/undefined error suggests missing check
 - DTO validation doesn't check relationship existence
@@ -470,8 +479,10 @@ Based on diagnostic data, architecture analysis, and cross-project memory, gener
 ---
 
 ### Hypothesis 3: Race Condition
+
 **Likelihood**: 🟡 Medium
 **Evidence**:
+
 - Intermittent failure (20% of requests)
 - Timing logs show variable execution order
 - Async operations not properly awaited
@@ -482,8 +493,10 @@ Based on diagnostic data, architecture analysis, and cross-project memory, gener
 ---
 
 ### Hypothesis 4: Stale Cache
+
 **Likelihood**: 🟢 Low
 **Evidence**:
+
 - Works after service restart
 - Some users affected, others not
 - Caching layer detected in stack
@@ -494,8 +507,10 @@ Based on diagnostic data, architecture analysis, and cross-project memory, gener
 ---
 
 ### Hypothesis 5: State Synchronization (UI)
+
 **Likelihood**: 🟡 Medium (if UI bug)
 **Evidence**:
+
 - UI shows stale data
 - API returns correct data
 - State update logs show closure issue
@@ -507,8 +522,10 @@ Based on diagnostic data, architecture analysis, and cross-project memory, gener
 ---
 
 ### Hypothesis 6: Transaction Isolation
+
 **Likelihood**: 🟢 Low
 **Evidence**:
+
 - Concurrent requests show different results
 - Database isolation level: READ_COMMITTED
 - Phantom read possible
@@ -519,15 +536,17 @@ Based on diagnostic data, architecture analysis, and cross-project memory, gener
 ---
 
 ### Hypothesis 7: Authentication/Authorization Issue
+
 **Likelihood**: 🟢 Low
 **Evidence**:
+
 - Works for admin users
 - Fails for regular users
 - Permission check logs unclear
 
 **Data Flow Point**: Middleware → Service
 **Affected Layer**: Authorization middleware
-````
+```
 
 ### Step 4.2: Distill to 1-2 Most Likely Causes
 
@@ -631,16 +650,19 @@ Use this template for the diagnosis report:
 ### Step 5.2: Wait for User Response
 
 **DO NOT PROCEED** until user explicitly confirms:
+
 - ✅ "Yes, fix it"
 - ✅ "Diagnosis looks correct, proceed"
 - ✅ "Implement the fix"
 
 **If user provides additional context**:
+
 - Update diagnostic logs
 - Re-run hypothesis generation
 - Present updated diagnosis
 
 **If user says diagnosis is wrong**:
+
 - Ask for specific feedback
 - Add more targeted diagnostics
 - Re-analyze with new information
@@ -655,30 +677,36 @@ Use this template for the diagnosis report:
 ## Changes Required
 
 ### 1. Repository Layer
+
 **File**: `src/repositories/user.repository.ts`
 **Lines**: 25-30
 **Change**: Add eager loading for subscription relationship
 
 ### 2. Service Layer (Defensive)
+
 **File**: `src/services/payment.service.ts`
 **Lines**: 45-47
 **Change**: Add null check for subscription
 
 ### 3. Tests
+
 **Files**:
+
 - `src/repositories/user.repository.test.ts` (add eager loading tests)
 - `src/services/payment.service.test.ts` (add null subscription tests)
 
 ### 4. Documentation
+
 **File**: `docs/architecture/data-model.md`
 **Change**: Document eager loading pattern for User queries
 
 ## Risk Assessment
+
 - **Risk Level**: Low
 - **Affected Users**: All subscription users
 - **Rollback Plan**: Revert single commit
 - **Testing Required**: Unit + Integration tests
-````
+```
 
 ### Step 6.2: Implement Fix with Tests
 
@@ -1257,3 +1285,4 @@ This command integrates with:
 **Ready to diagnose and fix bugs with systematic, evidence-based approach!** 🔍
 
 $ARGUMENTS
+````

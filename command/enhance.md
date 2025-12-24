@@ -1,6 +1,7 @@
 ---
 description: Enhance frontend to pixel-perfect standards with mobile responsiveness and industry-leading design quality
 argument-hint: Page or component name (optional - scans all if not specified)
+model: anthropic/claude-opus-4-5
 ---
 
 # Frontend Enhancement to Pixel-Perfect Standards

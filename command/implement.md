@@ -1,6 +1,7 @@
 ---
 description: Full implementation mode - end-to-end feature implementation with parallel agent orchestration
 argument-hint: "<feature or task description> to implement"
+model: anthropic/claude-opus-4-5
 ---
 
 # IMPLEMENTATION MODE

@@ -1,6 +1,7 @@
 ---
 description: Ultra-deep multi-perspective analysis for complex architectural and strategic decisions
 argument-hint: "<problem or question> - architectural decisions, scaling strategies, technology choices"
+model: anthropic/claude-opus-4-5
 ---
 
 # Deep Analysis and Problem Solving Mode

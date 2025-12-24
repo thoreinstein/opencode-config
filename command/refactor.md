@@ -1,6 +1,7 @@
 ---
 description: "Analyze code and suggest refactoring opportunities with rationale"
 argument-hint: "<file, directory, or function/component name> [concern]"
+model: anthropic/claude-opus-4-5
 ---
 
 # Refactoring Analysis

@@ -1,6 +1,7 @@
 ---
 description: Generate comprehensive data model documentation with ERD, DTOs, and data flow diagrams
 argument-hint: "[scope] - optional focus area (e.g., 'users', 'orders', 'auth')"
+model: anthropic/claude-opus-4-5
 ---
 
 # Data Model Generation Command
