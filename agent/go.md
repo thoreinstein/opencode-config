@@ -49,6 +49,9 @@ Before declaring code complete:
 - [ ] Race condition safety (`go test -race`)
 - [ ] Error messages don't leak sensitive info
 - [ ] All error messages are checked
+- [ ] No error messages are intentionaly ignored
+- [ ] All golangci-lint checks pass
+- [ ] DO NOT USE NOLINT DIRECTIVES
 
 ## Anti-Patterns
 
