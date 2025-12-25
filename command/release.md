@@ -52,3 +52,4 @@ Author a release by automatically selecting the correct semver version based on 
 8. Review both files for clarity and completeness. Ensure no TODOs remain.
 9. `@linux` creates the signed tag: `git tag -s "$VERSION" -m "<release notes>"` (message should match the finalized release notes content).
 10. Output a brief summary of what changed and confirm the tag creation command executed (do not push).
+11. DO NOT PUSH UNDER AND CIRCUMSTANCE
