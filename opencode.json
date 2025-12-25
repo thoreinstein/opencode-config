@@ -4,7 +4,7 @@
   "small_model": "{env:OPENCODE_SMALL_MODEL}",
   "agent": {
     "build": {
-      "model": "anthropic/claude-opus-4-5"
+      "model": "anthropic/claude-sonnet-4-5"
     },
     "plan": {
       "model": "github-copilot/gpt-5.1-codex-max"
