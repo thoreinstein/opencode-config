@@ -6,6 +6,9 @@ model: github-copilot/gpt-5.1-mini
 
 # Dependency Analysis & Management
 
+**Current Time:** !`date`
+**Go Version:** !`go version`
+
 Analyze project dependencies for security vulnerabilities, outdated packages, and license compliance. Documents findings to Obsidian.
 
 ## Input

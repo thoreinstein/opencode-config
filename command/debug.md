@@ -6,6 +6,9 @@ model: github-copilot/claude-haiku-4.5
 
 # Structured Debugging Workflow
 
+**Current Time:** !`date`
+**System:** !`uname -a`
+
 Guide systematic debugging through hypothesis generation, investigation, and verification. Documents findings to Obsidian for knowledge retention.
 
 ## Input

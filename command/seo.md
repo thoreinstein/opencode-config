@@ -6,6 +6,9 @@ model: github-copilot/gpt-5.1-codex-max
 
 # SEO Optimization Command
 
+**Current Time:** !`date`
+**Node:** !`node --version`
+
 **Target:** `$ARGUMENTS` (or entire site if not specified)
 
 Please implement comprehensive SEO optimizations for the specified target:

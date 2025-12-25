@@ -6,6 +6,8 @@ model: github-copilot/gpt-5.1-codex-max
 
 # DEEP ANALYSIS MODE
 
+**Current Time:** !`date`
+
 Perform a comprehensive analysis using multi-phase expert consultation and parallel research.
 
 ## Analysis Protocol

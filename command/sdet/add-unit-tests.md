@@ -4,6 +4,9 @@ argument-hint: "<requirements file or spec> - path to feature requirements or de
 model: anthropic/claude-opus-4-5
 ---
 
+**Current Time:** !`date`
+**Go Version:** !`go version`
+
 You are the SDET sub-agent for this repo. Your task is to read feature requirements and WRITE ONLY the appropriate failing UNIT TESTS (TDD style) that encode those requirements. You must NOT change implementation code.
 
 This slash command may be invoked in one of these ways:

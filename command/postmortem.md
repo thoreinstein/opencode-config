@@ -6,6 +6,8 @@ model: github-copilot/gpt-5.1-codex-max
 
 # Post-Incident Review
 
+**Current Time:** !`date`
+
 Generate a blameless postmortem document with root cause analysis. Investigates the incident and codebase to provide deeper RCA insights.
 
 ## Input

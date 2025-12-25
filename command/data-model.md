@@ -6,6 +6,9 @@ model: anthropic/claude-opus-4-5
 
 # Data Model Generation Command
 
+**Current Time:** !`date`
+**PostgreSQL:** !`psql --version`
+
 Create comprehensive Entity Relationship Diagrams (ERDs) and data documentation for the current project.
 
 ## Objective

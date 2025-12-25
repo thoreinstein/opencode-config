@@ -6,6 +6,9 @@ model: anthropic/claude-opus-4-5
 
 # IMPLEMENTATION MODE
 
+**Current Time:** !`date`
+**Go Version:** !`go version`
+
 Execute a complete feature implementation using coordinated agent swarms.
 
 ## Implementation Protocol

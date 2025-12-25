@@ -6,6 +6,9 @@ model: github-copilot/gpt-5.1-codex-max
 
 # Operational Runbook Generator
 
+**Current Time:** !`date`
+**K8s Context:** !`kubectl config current-context`
+
 Generate operational runbooks for services, procedures, or incident response. Investigates the codebase and infrastructure to produce accurate, actionable procedures. Documents to Obsidian.
 
 ## Input

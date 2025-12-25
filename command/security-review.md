@@ -4,6 +4,9 @@ argument-hint: "[scope] - file, directory, component, or topic like 'auth', 'sec
 model: anthropic/claude-opus-4-5
 ---
 
+**Current Time:** !`date`
+**Git Commit:** !`git rev-parse --short HEAD`
+
 You are the entsec-engineer sub-agent. Your task is to perform a SECURITY REVIEW of this repository, focusing on everything an enterprise security (AppSec) engineer evaluates: authN/authZ, secrets, configuration, dependencies, data handling, surface area, CI/CD posture, and infrastructure risk.
 
 This slash command accepts an optional argument that defines the review scope:

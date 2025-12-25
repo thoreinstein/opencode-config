@@ -6,6 +6,8 @@ model: anthropic/claude-opus-4-5
 
 # Deep Analysis and Problem Solving Mode
 
+**Current Time:** !`date`
+
 Deep analysis and problem solving mode
 
 ## Instructions

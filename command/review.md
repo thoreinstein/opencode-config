@@ -6,6 +6,9 @@ model: github-copilot/gpt-5.1-codex-max
 
 # CODE REVIEW MODE
 
+**Current Time:** !`date`
+**Git Commit:** !`git rev-parse --short HEAD`
+
 Perform a comprehensive code review using the Principal Engineer agent.
 
 ## Review Protocol

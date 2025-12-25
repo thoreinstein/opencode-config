@@ -6,6 +6,8 @@ model: github-copilot/gpt-5.1-codex-max
 
 # DEEP SEARCH MODE
 
+**Current Time:** !`date`
+
 Execute a comprehensive search using parallel agent swarms across multiple sources.
 
 ## Search Protocol

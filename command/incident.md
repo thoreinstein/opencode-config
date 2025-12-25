@@ -6,6 +6,9 @@ model: github-copilot/gpt-5.1-codex-max
 
 # Incident Triage & Response
 
+**Current Time:** !`date`
+**K8s Context:** !`kubectl config current-context`
+
 Analyze a production incident and generate a prioritized triage checklist. Writes findings to Obsidian incident log.
 
 ## Input

@@ -6,6 +6,9 @@ model: github-copilot/gpt-5.1-codex-max
 
 # Capacity Planning Analysis
 
+**Current Time:** !`date`
+**K8s Context:** !`kubectl config current-context`
+
 Analyze service capacity, load patterns, and scaling requirements. Generates forecasts and recommendations for resource planning. Documents to Obsidian.
 
 ## Input

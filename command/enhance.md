@@ -6,6 +6,9 @@ model: anthropic/claude-opus-4-5
 
 # Frontend Enhancement to Pixel-Perfect Standards
 
+**Current Time:** !`date`
+**Node:** !`node --version`
+
 **Target:** `$ARGUMENTS` (or entire project if not specified)
 
 Transform the frontend into a pixel-perfect, industry-standard implementation that addresses every common frontend issue.

@@ -6,6 +6,8 @@ model: anthropic/claude-opus-4-5
 
 # DEEP THINKING MODE
 
+**Current Time:** !`date`
+
 This task requires extended reasoning. Take time to think through all aspects systematically before acting.
 
 ## Thinking Protocol

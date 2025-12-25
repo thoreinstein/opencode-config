@@ -6,6 +6,9 @@ model: anthropic/claude-opus-4-5
 
 # Refactoring Analysis
 
+**Current Time:** !`date`
+**Go Version:** !`go version`
+
 Analyze code and suggest refactoring opportunities with rationale. Documents findings to Obsidian for tracking and discussion.
 
 ## Input

@@ -6,6 +6,9 @@ model: github-copilot/gpt-5.1-codex-max
 
 # Database Index Analysis
 
+**Current Time:** !`date`
+**PostgreSQL:** !`psql --version`
+
 **Scope:** `$ARGUMENTS` (or entire codebase if not specified)
 
 Scan whole codebase and tell me what indexes are missing.

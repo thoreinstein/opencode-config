@@ -6,6 +6,8 @@ model: anthropic/claude-opus-4-5
 
 # Bug Diagnosis and Fix Command
 
+**Current Time:** !`date`
+
 Intelligently diagnose and fix bugs by:
 
 1. **Adding diagnostic instrumentation** to capture current behavior

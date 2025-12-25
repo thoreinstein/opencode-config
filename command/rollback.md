@@ -6,6 +6,9 @@ model: github-copilot/gpt-5.1-codex-max
 
 # Rollback Analysis & Checklist
 
+**Current Time:** !`date`
+**K8s Context:** !`kubectl config current-context`
+
 Analyze a deployment or change for rollback safety and generate a prioritized rollback checklist. Documents findings to Obsidian.
 
 ## Input

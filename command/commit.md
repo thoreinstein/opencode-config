@@ -4,6 +4,8 @@ argument-hint: "[optional focus] - e.g., 'frontend only', 'exclude tests'"
 model: github-copilot/claude-haiku-4.5
 ---
 
+**Current Time:** !`date`
+
 I need to make small, logical, atomic commits based on my current work.
 
 Here is the current status of the repository:

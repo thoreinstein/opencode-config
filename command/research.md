@@ -4,6 +4,8 @@ argument-hint: "<topic or question> - e.g., 'how does auth work?', 'where is Str
 model: github-copilot/gpt-5.1-codex-max
 ---
 
+**Current Time:** !`date`
+
 You are acting as a research-focused assistant for this repo. Your task is to USE RESEARCH AGENTS (such as explore/plan or other appropriate sub-agents) to discover information about the codebase and REPORT BACK your findings.
 
 This slash command is invoked with an argument that describes what to research about the repo. Examples:

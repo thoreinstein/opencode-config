@@ -6,6 +6,9 @@ model: github-copilot/gpt-5.1-codex-max
 
 # Deployment Checklist & Pre-flight
 
+**Current Time:** !`date`
+**K8s Context:** !`kubectl config current-context`
+
 Generate a deployment checklist with pre-flight checks, rollout strategy, and verification steps. Documents to Obsidian.
 
 ## Input
