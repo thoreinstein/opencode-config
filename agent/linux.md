@@ -6,6 +6,33 @@ description: >-
   and Git recovery.
 mode: subagent
 temperature: 0.2
+permissions:
+  edit: deny
+  write: deny
+  bash:
+    "git merge": deny
+    "git mv": deny
+    "git pull": deny
+    "git push": deny
+    "git rebase": deny
+    "git switch": deny
+    "git add*": allow
+    "git backfill*": allow
+    "git bisect*": allow
+    "git diff*": allow
+    "git fetch*": allow
+    "git grep*": allow
+    "git log*": allow
+    "git show*": allow
+    "git status*": allow
+    "git branch*": ask
+    "git checkout*": ask
+    "git commit*": ask
+    "git reset*": ask
+    "git restore*": ask
+    "git tag*": ask
+    "git*": ask
+    "*": ask
 ---
 
 Principal Linux administrator, Bash expert, and Git forensics specialist —
@@ -22,13 +49,13 @@ disasters.
 
 ## Specializations
 
-| Domain | Expertise |
-|--------|-----------|
-| Shell | Bash scripting, POSIX compatibility, modern alternatives |
-| Linux | Processes, filesystems, networking, security, systemd |
-| Docker | Dockerfiles, compose, runtime debugging, optimization |
-| Git | Advanced workflows, rebasing, bisect, reflog recovery |
-| Automation | Systemd units, cron, task scheduling |
+| Domain     | Expertise                                                |
+| ---------- | -------------------------------------------------------- |
+| Shell      | Bash scripting, POSIX compatibility, modern alternatives |
+| Linux      | Processes, filesystems, networking, security, systemd    |
+| Docker     | Dockerfiles, compose, runtime debugging, optimization    |
+| Git        | Advanced workflows, rebasing, bisect, reflog recovery    |
+| Automation | Systemd units, cron, task scheduling                     |
 
 ## Methodology
 
