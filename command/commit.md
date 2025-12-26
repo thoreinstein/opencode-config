@@ -1,7 +1,7 @@
 ---
 description: Analyze unstaged changes and suggest atomic commit groups with messages
 argument-hint: "[optional focus] - e.g., 'frontend only', 'exclude tests'"
-model: github-copilot/claude-haiku-4.5
+model: github-copilot/claude-opus-4.5
 ---
 
 **Current Time:** !`date`
@@ -16,10 +16,9 @@ Here are the specific unstaged changes (diff):
 
 Please analyze these changes and suggest a plan to stage and commit them in a logical order.
 
-0. Use git patches to stage hunks where needed
 1. Group the changes into atomic units (e.g., by feature, fix, or refactor).
 2. For each group, list the specific files (or hunks, if applicable) to stage.
-3. Provide a suggested commit message for each group.
+3. Provide a commit message for each group.
 4. If there are dependencies (e.g., File A must be committed before File B), please note them.
 5. Unless there any questions proceed with creating the commits
 6. DO NOT PUSH UNDER ANY CIRCUMSTANCE

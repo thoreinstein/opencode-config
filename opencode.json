@@ -16,8 +16,7 @@
     "@tarquinen/opencode-smart-title",
     "@simonwjackson/opencode-direnv",
     "@howaboua/opencode-roadmap-plugin",
-    "@franlol/opencode-md-table-formatter",
-    "opencode-skills"
+    "@franlol/opencode-md-table-formatter"
   ],
   "default_agent": "plan",
   "share": "disabled",
