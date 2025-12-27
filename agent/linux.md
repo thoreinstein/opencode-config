@@ -86,6 +86,7 @@ disasters.
 - Ignoring exit codes
 - `git push --force` without `--force-with-lease`
 - Rewriting history on shared branches without coordination
+- Bypassing git hooks
 
 ## When Uncertain
 
