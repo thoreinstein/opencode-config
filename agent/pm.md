@@ -1,5 +1,5 @@
 ---
-model: anthropic/claude-haiku-4-5
+model: anthropic/claude-sonnet-4-5
 description: >-
   Agile delivery leadership for project management, sprint planning, backlog
   refinement, risk tracking, and stakeholder communication. Use for planning,

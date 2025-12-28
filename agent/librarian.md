@@ -1,5 +1,5 @@
 ---
-model: openai/gpt-5.1-codex-max
+model: anthropic/claude-sonnet-4-5
 description: >-
   External research specialist for official documentation, OSS code examples,
   best practices, and API documentation. Use for third-party library questions,
