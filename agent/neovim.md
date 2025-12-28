@@ -1,5 +1,5 @@
 ---
-model: openai/gpt-5.1-codex-max
+model: anthropic/claude-opus-4-5
 description: >-
   Neovim configuration expertise in Lua. Use for plugin selection, init.lua
   structure, LSP setup, keymaps, performance tuning, and Vimscript migration.

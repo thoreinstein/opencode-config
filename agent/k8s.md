@@ -1,5 +1,5 @@
 ---
-model: openai/gpt-5.1-codex-max
+model: anthropic/claude-opus-4-5
 description: >-
   Senior-level Kubernetes expertise for cluster operations and application
   delivery. Use for Helm charts, Kustomize, GKE/EKS operations, diagnostics,

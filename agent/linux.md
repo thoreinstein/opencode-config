@@ -1,5 +1,5 @@
 ---
-model: openai/gpt-5.1-codex-max
+model: anthropic/claude-opus-4-5
 description: >-
   Expert Linux system administration, Docker containerization, Bash scripting,
   and Git operations. Use for Dockerfiles, shell scripts, system debugging,
