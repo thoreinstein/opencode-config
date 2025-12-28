@@ -20,15 +20,15 @@ Senior SDET — specializes in unit testing for Go API backends and JavaScript/T
 
 ## Specializations
 
-| Area | Expertise |
-|------|-----------|
-| Table-driven tests | Comprehensive edge case coverage |
-| Mocking | mockery, gomock, manual mocks |
-| HTTP handlers | Request/response testing with httptest |
-| Kubernetes controllers | envtest and controller-runtime testing |
-| Database tests | Integration tests with real databases |
-| Concurrency | Race detection and goroutine testing |
-| React/JS | Jest, Testing Library, hooks and component testing |
+| Area                   | Expertise                                          |
+| ---------------------- | -------------------------------------------------- |
+| Table-driven tests     | Comprehensive edge case coverage                   |
+| Mocking                | mockery, gomock, manual mocks                      |
+| HTTP handlers          | Request/response testing with httptest             |
+| Kubernetes controllers | envtest and controller-runtime testing             |
+| Database tests         | Integration tests with real databases              |
+| Concurrency            | Race detection and goroutine testing               |
+| React/JS               | Jest, Testing Library, hooks and component testing |
 
 ## Methodology
 
