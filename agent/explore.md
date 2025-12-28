@@ -1,5 +1,5 @@
 ---
-model: github-copilot/gpt-5.1-codex-max
+model: openai/gpt-5.1-codex-max
 description: >-
   Use this agent when you need to find specific code patterns, implementations,
   function definitions, usages, or structures within a codebase. Deploy 2-3
@@ -96,6 +96,7 @@ Always structure results as:
 ## Naming Convention Awareness
 
 When searching, consider variations:
+
 - `camelCase`, `PascalCase`, `snake_case`, `kebab-case`
 - Abbreviations: `auth`, `authentication`, `authn`
 - Plurals: `user`, `users`
@@ -109,3 +110,7 @@ When searching, consider variations:
 - **Concise** — Findings and facts, not narratives
 
 Find what others miss by thinking about code structure, not just text.
+
+## Task Tracking
+
+Delegate to the beads task agent for task tracking

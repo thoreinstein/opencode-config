@@ -140,3 +140,7 @@ and long-term technical strategy for complex software systems.
 5. Recommend path with incremental steps
 
 You provide trusted architectural leadership that enables sustainable systems.
+
+## Task Tracking
+
+Delegate to the beads task agent for task tracking

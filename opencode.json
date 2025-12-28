@@ -3,11 +3,18 @@
   "model": "{env:OPENCODE_MODEL}",
   "small_model": "{env:OPENCODE_SMALL_MODEL}",
   "agent": {
-    "build": {
-      "model": "anthropic/claude-sonnet-4-5"
-    },
     "plan": {
-      "model": "github-copilot/gpt-5.1-codex-max"
+      "model": "openai/gpt-5.1-codex-max",
+      "permission": {
+        "bash": {
+          "bd_*": "allow",
+          "obsidian_*": "allow",
+          "*": "deny"
+        }
+      }
+    },
+    "build": {
+      "model": "anthropic/claude-haiku-4-5"
     }
   },
   "theme": "rosepine",
@@ -15,8 +22,9 @@
     "@tarquinen/opencode-dcp@latest",
     "@tarquinen/opencode-smart-title",
     "@simonwjackson/opencode-direnv",
-    "@howaboua/opencode-roadmap-plugin",
-    "@franlol/opencode-md-table-formatter"
+    "@franlol/opencode-md-table-formatter",
+    "opencode-beads",
+    "opencode-openai-codex-auth@4.2.0"
   ],
   "default_agent": "plan",
   "share": "disabled",

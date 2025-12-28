@@ -1,7 +1,7 @@
 ---
 description: Analyze unstaged changes and suggest atomic commit groups with messages
 argument-hint: "[optional focus] - e.g., 'frontend only', 'exclude tests', 'phase 3'"
-model: github-copilot/claude-opus-4.5
+model: anthropic/claude-opus-4-5
 ---
 
 **Current Time:** !`date`
@@ -10,27 +10,27 @@ I need to make small, logical, atomic commits based on my current work.
 
 ---
 
-## Roadmap Integration (When Using Implement Skill)
+## Beads Integration (When Using Implement Skill)
 
 If this commit is part of an implementation workflow:
 
-1. **Check roadmap state**: Call `readroadmap` to see current phase
+1. **Check task state**: Dispatch the beads task agent to get ticket details
 2. **Verify phase work complete**: Ensure all actions for current phase are done
-3. **After commit succeeds**: Call `updateroadmap` to mark phase actions as `completed`
+3. **After commit succeeds**: Dispatch the beads task agent to close the ticket
 4. **Phase gate**: Do NOT proceed to next phase until this commit succeeds
-5. **Final phase cleanup**: If this is the last phase, archive/delete the roadmap
+5. **Final phase cleanup**: If this is the last phase, verify all tasks are closed
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │  PHASE COMMIT GATE                                          │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│   Current Phase: [read from roadmap]                        │
+│   Current Task: [from ticket title]                         │
 │                                                             │
 │   ✓ Phase work complete                                     │
 │   ✓ Verification passed                                     │
 │   → COMMIT (this command)                                   │
-│   → Update roadmap (mark phase completed)                   │
+│   → Update task (bd task closed)                            │
 │   → PROCEED to next phase                                   │
 │                                                             │
 │   ⚠️  DO NOT PROCEED UNTIL COMMIT SUCCEEDS                  │
@@ -96,7 +96,7 @@ Analyze the changes and create a plan to stage and commit them logically:
 2. For each group, list the specific files to stage
 3. Provide a commit message for each group following format:
    - Subject: Capital verb, 50 chars max, no period
-   - Body: Required. Blank line after subject, wrapped at 72 chars. Explain *why*.
+   - Body: Required. Blank line after subject, wrapped at 72 chars. Explain _why_.
 4. Note any dependencies (File A must be committed before File B)
 5. Unless there are questions, proceed with creating the commits
 6. **DO NOT PUSH UNDER ANY CIRCUMSTANCE**
@@ -105,8 +105,8 @@ Analyze the changes and create a plan to stage and commit them logically:
 
 After successful commit:
 
-1. **Update roadmap**: `updateroadmap(actionNumber="X.99", status="completed", note="Phase X committed")`
-2. **Check if final phase**: If yes, archive/delete roadmap file
-3. **Proceed signal**: Only after roadmap updated, signal ready for next phase
+1. **Update task**: Dispatch beads task agent to close ticket
+2. **Check if final phase**: If yes, verify all related tasks are closed
+3. **Proceed signal**: Only after task updated, signal ready for next phase
 
 $ARGUMENTS

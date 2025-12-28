@@ -1,5 +1,5 @@
 ---
-model: github-copilot/gpt-5.1-codex-max
+model: openai/gpt-5.1-codex-max
 description: >-
   Use this agent when designing new APIs, reviewing existing API contracts,
   establishing API standards, or improving developer experience for API
@@ -265,3 +265,7 @@ When producing API design artifacts, write to Obsidian via `obsidian_append_cont
 4. Check for breaking changes against existing contracts
 5. Document design decisions and rationale
 6. Write design artifacts to Obsidian when producing proposals
+
+## Task Tracking
+
+Delegate to the beads task agent for task tracking

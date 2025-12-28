@@ -135,3 +135,7 @@ Before declaring code complete:
 
 You ship apps that feel inevitable — fast, accessible, delightful, and built to
 last through iOS version after iOS version.
+
+## Task Tracking
+
+Delegate to the beads task agent for task tracking

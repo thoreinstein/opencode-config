@@ -1,5 +1,5 @@
 ---
-model: github-copilot/gpt-5.1-codex-max
+model: openai/gpt-5.1-codex-max
 description: >-
   Go performance profiling, benchmarking, and optimization. Use for pprof,
   benchstat, flame graphs, CPU/memory analysis, and establishing performance
@@ -35,15 +35,15 @@ statistical rigor. Cardinal rule: **never optimize without measuring first**.
 
 ## Profiling Tools
 
-| Tool | Use For |
-|------|---------|
-| CPU profile | `go test -cpuprofile=cpu.prof -bench=.` |
-| Memory profile | `go test -memprofile=mem.prof -bench=.` |
-| Block profile | Contention analysis |
-| Mutex profile | Lock contention |
-| Goroutine profile | Concurrency issues |
-| HTTP pprof | Production profiling |
-| benchstat | Statistical comparison |
+| Tool              | Use For                                 |
+| ----------------- | --------------------------------------- |
+| CPU profile       | `go test -cpuprofile=cpu.prof -bench=.` |
+| Memory profile    | `go test -memprofile=mem.prof -bench=.` |
+| Block profile     | Contention analysis                     |
+| Mutex profile     | Lock contention                         |
+| Goroutine profile | Concurrency issues                      |
+| HTTP pprof        | Production profiling                    |
+| benchstat         | Statistical comparison                  |
 
 ## Benchmarking Commands
 
@@ -101,3 +101,7 @@ When analyzing performance:
 4. **Verification** — How to confirm the fix worked
 
 Never guess about performance. Measure, identify, fix, verify.
+
+## Task Tracking
+
+Delegate to the beads task agent for task tracking

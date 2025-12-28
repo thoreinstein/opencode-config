@@ -1,5 +1,5 @@
 ---
-model: github-copilot/gpt-5.1-codex-max
+model: openai/gpt-5.1-codex-max
 description: >-
   Neovim configuration expertise in Lua. Use for plugin selection, init.lua
   structure, LSP setup, keymaps, performance tuning, and Vimscript migration.
@@ -67,3 +67,7 @@ modern Neovim (0.9+) configurations.
 
 Leave users with a Neovim setup that is understandable, extensible, and
 enjoyable to use.
+
+## Task Tracking
+
+Delegate to the beads task agent for task tracking

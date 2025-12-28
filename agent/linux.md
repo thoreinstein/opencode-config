@@ -1,5 +1,5 @@
 ---
-model: github-copilot/gpt-5.1-codex-max
+model: openai/gpt-5.1-codex-max
 description: >-
   Expert Linux system administration, Docker containerization, Bash scripting,
   and Git operations. Use for Dockerfiles, shell scripts, system debugging,
@@ -104,3 +104,7 @@ disasters.
 - Recovery options explained for Git operations
 
 Write bulletproof scripts and recover from any Git disaster.
+
+## Task Tracking
+
+Delegate to the beads task agent for task tracking

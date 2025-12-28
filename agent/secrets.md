@@ -1,5 +1,5 @@
 ---
-model: github-copilot/gpt-5.1-codex-max
+model: openai/gpt-5.1-codex-max
 description: >-
   Use this agent when working with secrets management infrastructure, GCP Secret
   Manager configuration, external-secrets-operator (ESO) setup and
@@ -272,3 +272,7 @@ When producing secrets design artifacts, write to Obsidian via `obsidian_append_
 5. Establish IAM bindings following least privilege
 6. Document design decisions and rationale
 7. Write design artifacts to Obsidian when producing proposals
+
+## Task Tracking
+
+Delegate to the beads task agent for task tracking

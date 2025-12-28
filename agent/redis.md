@@ -1,5 +1,5 @@
 ---
-model: github-copilot/gpt-5.1-codex-max
+model: openai/gpt-5.1-codex-max
 description: >-
   Use this agent when working with Redis databases, including designing data
   structures, implementing caching strategies, optimizing performance,
@@ -278,3 +278,7 @@ When producing Redis design artifacts, write to Obsidian via `obsidian_append_co
 5. Provide Go implementation examples using go-redis
 6. Consider memory and performance implications
 7. Write design artifacts to Obsidian when producing proposals
+
+## Task Tracking
+
+Delegate to the beads task agent for task tracking

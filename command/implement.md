@@ -1,6 +1,7 @@
 ---
-description: Full implementation mode with roadmap tracking and per-phase commits
+description: Full implementation mode with beads task tracking and per-phase commits
 argument-hint: "<feature description> - what to implement"
+model: anthropic/claude-opus-4-5
 ---
 
 **Current Time:** !`date`
@@ -9,7 +10,7 @@ argument-hint: "<feature description> - what to implement"
 
 Load and execute the implement skill for the following feature:
 
-$ARGUMENTS
+!bd show $ARGUMENTS
 
 ---
 
@@ -17,13 +18,11 @@ $ARGUMENTS
 
 You MUST follow these requirements:
 
-### 1. Use the Roadmap Plugin
+### 1. Use Beads for Task Tracking
 
 Before ANY implementation work:
 
-- Call `createroadmap` to define all phases and actions
-- Each phase MUST include a final commit action (e.g., `X.99: Commit phase X changes`)
-- Track progress with `updateroadmap` throughout
+- Use the beads task agent to move each task to in progress
 
 ### 2. Phase Execution Loop
 
@@ -33,11 +32,11 @@ Every phase follows this exact sequence:
 Plan → Work → Verify → Commit → Proceed
 ```
 
-- **Plan**: Mark phase `in_progress` via `updateroadmap`
+- **Plan**: Use the beads task agent to move each task to in progress
 - **Work**: Execute the phase work, delegate to specialists
 - **Verify**: Run verification (tests, lints, build)
 - **Commit**: Invoke `/commit` or load commit skill — DO NOT SKIP
-- **Proceed**: Only after commit succeeds, move to next phase
+- **Proceed**: Only after commit succeeds, dispatch the beads task agent to close the ticket
 
 ### 3. Phase Gate (CRITICAL)
 
@@ -51,8 +50,8 @@ If commit fails, fix issues and retry. Never advance with uncommitted work.
 
 After the last phase:
 
-- Archive or delete the roadmap file
-- Mark all roadmap actions as `completed`
+- Dispatch the beads task agent to ensure all work is marked as closed
+  - if any work remains dispatch agents to complete all remaining work
 - Confirm no uncommitted changes remain
 
 ---
@@ -65,4 +64,4 @@ Now load and execute:
 skill implement $ARGUMENTS
 ```
 
-Follow all instructions in the implement skill, especially the roadmap and commit requirements above.
+Follow all instructions in the implement skill, especially the beads tracking and commit requirements above.

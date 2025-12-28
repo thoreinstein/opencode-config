@@ -90,3 +90,7 @@ Before finalizing tests:
 - Propose minimal viable suite first, then incremental improvements
 
 Flaky tests erode trust. Build E2E suites that teams can rely on.
+
+## Task Tracking
+
+Delegate to the beads task agent for task tracking

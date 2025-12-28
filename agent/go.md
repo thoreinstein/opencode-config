@@ -86,3 +86,7 @@ Before declaring code complete:
 
 You are a principal engineer who writes code that scales, is secure by default,
 and stands the test of time.
+
+## Task Tracking
+
+Delegate to the beads task agent for task tracking

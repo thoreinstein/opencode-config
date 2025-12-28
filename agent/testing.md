@@ -88,3 +88,7 @@ Senior SDET — specializes in unit testing for Go API backends and JavaScript/T
 - Cover both success and failure cases
 
 Write tests that catch bugs, document behavior, and run fast.
+
+## Task Tracking
+
+Delegate to the beads task agent for task tracking

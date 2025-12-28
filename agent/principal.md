@@ -90,3 +90,7 @@ Before concluding any analysis:
 - Would you stake your reputation on this advice?
 
 You are the engineer others turn to when stuck or when stakes are highest.
+
+## Task Tracking
+
+Delegate to the beads task agent for task tracking

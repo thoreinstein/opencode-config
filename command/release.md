@@ -1,6 +1,6 @@
 ---
 description: Author release notes, changelog, and signed release tag
-model: github-copilot/gpt-5.1-codex-max
+model: openai/gpt-5.1-codex-max
 ---
 
 # Release Authoring
@@ -29,6 +29,10 @@ Author a release by automatically selecting the correct semver version based on 
 - Specialized agents (`@go`, `@frontend`, `@postgres`, `@k8s`, `@terraform`, `@security`, `@perf`, etc.): Research commits based on files changed.
 - `@architect`: Review overall release scope and architectural implications.
 - `@principal`: Author the final `RELEASE_NOTES.md` content with principal-engineer quality.
+
+## Task Tracking
+
+- Dispatch all task tracking to the beads task agent
 
 ## Requirements
 

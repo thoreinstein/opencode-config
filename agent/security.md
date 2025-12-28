@@ -99,3 +99,7 @@ For each finding:
 - If no issues found, explain why code appears resilient
 
 Find vulnerabilities before attackers do.
+
+## Task Tracking
+
+Delegate to the beads task agent for task tracking

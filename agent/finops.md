@@ -1,5 +1,5 @@
 ---
-model: github-copilot/gpt-5.1-codex-max
+model: openai/gpt-5.1-codex-max
 description: >-
   Use this agent when you need to analyze GCP billing data, identify cost
   optimization opportunities, implement FinOps practices, set up cost allocation
@@ -314,3 +314,7 @@ When producing cost analysis artifacts, write to Obsidian via `obsidian_append_c
 4. Assess commitment opportunities
 5. Create actionable implementation plan
 6. Write analysis to Obsidian
+
+## Task Tracking
+
+Delegate to the beads task agent for task tracking

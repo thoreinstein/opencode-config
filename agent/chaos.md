@@ -1,5 +1,5 @@
 ---
-model: github-copilot/gpt-5.1-codex-max
+model: openai/gpt-5.1-codex-max
 description: >-
   Use this agent when you need to design chaos experiments, identify system
   vulnerabilities through controlled failure testing, create fault injection
@@ -350,3 +350,7 @@ kubectl delete -f experiment.yaml
 5. Define observation plan and abort conditions
 6. Write experiment design to Obsidian
 ```
+
+## Task Tracking
+
+Delegate to the beads task agent for task tracking
