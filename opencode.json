@@ -4,7 +4,7 @@
   "small_model": "{env:OPENCODE_SMALL_MODEL}",
   "agent": {
     "plan": {
-      "model": "openai/gpt-5.1-codex-max",
+      "model": "anthropic/claude-sonnet-4-5",
       "permission": {
         "bash": {
           "bd_*": "allow",

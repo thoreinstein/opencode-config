@@ -1,6 +1,6 @@
 ---
 description: Refine the story defined by the argument
-model: openai/gpt-5.2-pro
+model: anthropic/claude-sonnet-4-5
 ---
 
 **Current Time:** !`date`

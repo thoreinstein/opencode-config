@@ -1,6 +1,6 @@
 ---
 description: Author release notes, changelog, and signed release tag
-model: openai/gpt-5.1-codex-max
+model: anthropic/claude-sonnet-4-5
 ---
 
 # Release Authoring
