@@ -22,6 +22,7 @@ You MUST follow these requirements:
 
 Before ANY implementation work:
 
+- Do not create new stories, move existing stories to in progress
 - Use the beads task agent to move each task to in progress
 
 ### 2. Phase Execution Loop
