@@ -20,11 +20,8 @@
   "theme": "rosepine",
   "plugin": [
     "@tarquinen/opencode-dcp@latest",
-    "@tarquinen/opencode-smart-title",
-    "@simonwjackson/opencode-direnv",
     "@franlol/opencode-md-table-formatter",
-    "opencode-beads",
-    "opencode-openai-codex-auth@4.2.0"
+    "opencode-beads"
   ],
   "default_agent": "plan",
   "share": "disabled",
