@@ -1,7 +1,6 @@
 ---
 description: Analyze a ticket and produce an implementation plan for /implement
 argument-hint: "<ticket-id> - e.g., PROJ-123, CORE-42"
-model: anthropic/claude-opus-4-5
 ---
 
 **Current Time:** !`date`

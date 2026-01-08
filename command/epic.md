@@ -1,6 +1,5 @@
 ---
 description: Refine the epic defined by the argument
-model: anthropic/claude-sonnet-4-5
 ---
 
 **Current Time:** !`date`

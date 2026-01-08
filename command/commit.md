@@ -1,7 +1,6 @@
 ---
 description: Analyze unstaged changes and suggest atomic commit groups with messages
 argument-hint: "[optional focus] - e.g., 'frontend only', 'exclude tests', 'phase 3'"
-model: anthropic/claude-opus-4-5
 ---
 
 **Current Time:** !`date`

@@ -1,6 +1,5 @@
 ---
 description: Author release notes, changelog, and signed release tag
-model: anthropic/claude-sonnet-4-5
 ---
 
 # Release Authoring

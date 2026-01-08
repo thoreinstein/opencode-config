@@ -1,7 +1,6 @@
 ---
 description: Full implementation mode with beads task tracking and per-phase commits
 argument-hint: "<feature description> - what to implement"
-model: anthropic/claude-opus-4-5
 ---
 
 **Current Time:** !`date`
