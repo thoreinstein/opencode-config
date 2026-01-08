@@ -1,5 +1,4 @@
 ---
-model: anthropic/claude-sonnet-4-5
 description: >-
   Use this agent for GCP application development: Cloud Run, GKE, Cloud Functions,
   Pub/Sub, Cloud SQL, Firestore. Appropriate for designing cloud-native apps,

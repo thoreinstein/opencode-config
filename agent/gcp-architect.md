@@ -1,5 +1,4 @@
 ---
-model: anthropic/claude-sonnet-4-5
 description: >-
   Use this agent when you need expert-level guidance, decisions, or reviews
   related to designing, migrating, securing, or optimizing solutions on Google

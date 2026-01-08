@@ -1,5 +1,4 @@
 ---
-model: anthropic/claude-opus-4-5
 description: >-
   Use this agent when you need to design chaos experiments, identify system
   vulnerabilities through controlled failure testing, create fault injection

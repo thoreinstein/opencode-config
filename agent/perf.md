@@ -1,5 +1,4 @@
 ---
-model: anthropic/claude-opus-4-5
 description: >-
   Go performance profiling, benchmarking, and optimization. Use for pprof,
   benchstat, flame graphs, CPU/memory analysis, and establishing performance

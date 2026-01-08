@@ -1,5 +1,4 @@
 ---
-model: anthropic/claude-opus-4-5
 description: >-
   Use this agent when you need to find specific code patterns, implementations,
   function definitions, usages, or structures within a codebase. Deploy 2-3

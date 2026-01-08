@@ -1,5 +1,4 @@
 ---
-model: anthropic/claude-opus-4-5
 description: >-
   Use this agent for pipelines across GitHub Actions, GitLab CI, Codefresh,
   ArgoCD and Tekton. With best practices, security, and performance in mind.

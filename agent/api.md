@@ -1,5 +1,4 @@
 ---
-model: anthropic/claude-opus-4-5
 description: >-
   Use this agent when designing new APIs, reviewing existing API contracts,
   establishing API standards, or improving developer experience for API

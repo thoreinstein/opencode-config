@@ -161,7 +161,6 @@ description: >-
   uses CloudEvents format - aligning implementation accordingly."
 
   </example>
-model: anthropic/claude-opus-4-5
 mode: primary
 temperature: 0.2
 tools:

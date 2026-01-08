@@ -1,5 +1,4 @@
 ---
-model: anthropic/claude-opus-4-5
 description: >-
   Use this agent when working with Redis databases, including designing data
   structures, implementing caching strategies, optimizing performance,

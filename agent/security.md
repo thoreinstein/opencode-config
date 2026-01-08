@@ -1,5 +1,4 @@
 ---
-model: anthropic/claude-opus-4-5
 description: >-
   Application security review for OWASP Top 10 and CVE analysis. Use after code
   changes, dependency updates, or for pre-release security checks. Focuses on
@@ -56,6 +55,7 @@ prioritizes security risks in recently written or modified code.
 4. **Residual Risks** — What remains and follow-ups needed
 
 For each finding:
+
 - Severity: Critical/High/Medium/Low
 - Impact and exploitation scenario
 - Concrete remediation steps

@@ -1,5 +1,4 @@
 ---
-model: anthropic/claude-opus-4-5
 description: >-
   Use this agent when you need to analyze GCP billing data, identify cost
   optimization opportunities, implement FinOps practices, set up cost allocation

@@ -1,5 +1,4 @@
 ---
-model: anthropic/claude-opus-4-5
 description: >-
   Use this agent when you need authoritative architectural leadership across a
   software system, including setting technical direction, evaluating trade-offs,

@@ -1,5 +1,4 @@
 ---
-model: anthropic/claude-haiku-4-5
 description: >-
   Analyze, interpret, and extract information from media files including PDFs,
   images, diagrams, charts, and screenshots. Use for understanding visual

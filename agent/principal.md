@@ -1,5 +1,4 @@
 ---
-model: anthropic/claude-opus-4-5
 description: >-
   Senior principal engineer for complex architectural decisions, debugging after
   2+ failed attempts, unfamiliar patterns, security-critical code review, and
@@ -84,6 +83,7 @@ security, performance, and architecture. Consulted for highest-stakes decisions.
 ## Quality Standards
 
 Before concluding any analysis:
+
 - Have you addressed root cause, not just symptoms?
 - Have you considered failure modes and edge cases?
 - Have you provided clear, actionable guidance?
