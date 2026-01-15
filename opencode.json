@@ -128,6 +128,19 @@
     "docs/*.md"
   ],
   "provider": {
+    "ollama": {
+      "name": "Ollama (local)",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "qwen3-coder:30b": {
+          "name": "Qwen Coder 30B",
+          "tools": true
+        }
+      }
+    },
     "google": {
       "options": {
         "projectId": "{env:GOOGLE_CLOUD_PROJECT}"
