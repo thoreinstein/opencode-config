@@ -1,73 +1,88 @@
 ---
 name: seo
-description: Implement SEO optimizations for specified pages or entire site
+description: "Audit and implement SEO optimizations for specified pages or entire site. Use when adding meta tags, structured data, improving Core Web Vitals, fixing crawlability issues, or running a full SEO audit on a web project."
 ---
 
-# SEO Optimization Command
+# SEO Optimization
 
-**Current Time:** !`date`
-**Node:** !`node --version`
+Audit the current SEO state of `$ARGUMENTS` (or entire site if not specified), then implement targeted fixes across technical, performance, and content dimensions.
 
-**Target:** `$ARGUMENTS` (or entire site if not specified)
+## Workflow
 
-Please implement comprehensive SEO optimizations for the specified target:
+### Step 1: Audit Current State
 
-## Technical SEO
+Scan the target for existing SEO setup before making changes:
 
-- [ ] Add/optimize meta titles and descriptions
-- [ ] Implement structured data (JSON-LD schema markup)
-- [ ] Create/update robots.txt and sitemap.xml
-- [ ] Add Open Graph and Twitter Card meta tags
-- [ ] Optimize canonical URLs
-- [ ] Implement proper heading hierarchy (H1-H6)
+```bash
+# Find pages missing meta descriptions
+grep -rL '<meta name="description"' src/ --include="*.html" --include="*.tsx" --include="*.jsx"
 
-## Performance SEO
+# Check for existing structured data
+grep -r 'application/ld+json' src/ --include="*.html" --include="*.tsx" --include="*.jsx"
 
-- [ ] Optimize Core Web Vitals (LCP, FID, CLS)
-- [ ] Implement image lazy loading and optimization
-- [ ] Minimize JavaScript and CSS
-- [ ] Enable compression and caching
-- [ ] Optimize server response times
+# Verify robots.txt and sitemap exist
+ls -la public/robots.txt public/sitemap.xml 2>/dev/null || echo "Missing robots.txt or sitemap.xml"
 
-## Content SEO
+# Check heading hierarchy
+grep -rn '<h[1-6]' src/ --include="*.html" --include="*.tsx" --include="*.jsx" | head -20
+```
 
-- [ ] Optimize content for target keywords
-- [ ] Improve internal linking structure
-- [ ] Add alt text to all images
-- [ ] Ensure mobile responsiveness
-- [ ] Implement proper URL structure
+Record findings before implementing changes.
 
-## Accessibility (SEO Impact)
+### Step 2: Technical SEO Fixes
 
-- [ ] WCAG 2.1 AA compliance
-- [ ] Semantic HTML usage
-- [ ] ARIA labels where needed
-- [ ] Keyboard navigation support
+Apply fixes in priority order:
 
-## 📚 **DOCUMENTATION REQUIREMENTS**
+1. **Meta tags** — Add/optimize `<title>` and `<meta name="description">` for each page. Keep titles under 60 chars, descriptions under 160 chars.
+2. **Structured data** — Add JSON-LD schema markup matching page content type (Article, Product, FAQ, etc.).
+3. **Crawlability** — Create or update `robots.txt` and `sitemap.xml`. Set canonical URLs on all pages.
+4. **Social tags** — Add Open Graph (`og:title`, `og:description`, `og:image`) and Twitter Card meta tags.
+5. **Heading hierarchy** — Ensure single `<h1>` per page with logical `<h2>`–`<h6>` nesting.
 
-**Create comprehensive SEO documentation at:**
+Example structured data for an article page:
 
-- `docs/tasks/frontend/DD-MM-YYYY/<semantic-seo-id>/`
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Page Title Here",
+  "author": { "@type": "Person", "name": "Author Name" },
+  "datePublished": "2024-01-15"
+}
+```
 
-**Documentation Structure:**
+### Step 3: Performance SEO
 
-- `README.md` - SEO audit overview and objectives
-- `technical-seo-audit.md` - Meta tags, structured data, schema markup
-- `performance-analysis.md` - Core Web Vitals, optimization metrics
-- `content-optimization.md` - Keyword analysis, content improvements
-- `accessibility-review.md` - WCAG compliance and SEO impact
-- `implementation-notes.md` - Technical decisions and trade-offs
-- `before-after-comparison.md` - SEO score improvements with metrics
+1. **Core Web Vitals** — Measure LCP, FID/INP, CLS. Target LCP < 2.5s, INP < 200ms, CLS < 0.1.
+2. **Images** — Add `loading="lazy"`, use WebP/AVIF formats, include `width`/`height` attributes to prevent layout shift.
+3. **Bundle size** — Minimize JS/CSS. Check for unused imports and dead code.
+4. **Caching** — Set appropriate `Cache-Control` headers for static assets.
 
-**Semantic SEO Task ID Examples:**
+### Step 4: Content & Accessibility SEO
 
-- `homepage-meta-optimization`
-- `product-page-structured-data`
-- `blog-content-seo-enhancement`
-- `core-web-vitals-optimization`
-- `semantic-html-seo-improvement`
+1. **Alt text** — Add descriptive `alt` attributes to all `<img>` elements.
+2. **Internal linking** — Identify orphan pages and add contextual internal links.
+3. **Semantic HTML** — Replace generic `<div>` wrappers with `<main>`, `<article>`, `<nav>`, `<section>` where appropriate.
+4. **ARIA labels** — Add `aria-label` or `aria-labelledby` to interactive elements missing visible labels.
 
-Please analyze the current state, implement missing optimizations, and document all changes according to the standards above.
+### Step 5: Validate Changes
+
+```bash
+# Verify no duplicate meta descriptions
+grep -rn '<meta name="description"' src/ --include="*.html" --include="*.tsx" --include="*.jsx" | sort
+
+# Validate JSON-LD syntax
+node -e "const fs=require('fs'); JSON.parse(fs.readFileSync('path/to/schema.json','utf8'))"
+
+# Run Lighthouse audit if available
+npx lighthouse http://localhost:3000 --only-categories=seo,performance --output=json --quiet
+```
+
+### Step 6: Document Changes
+
+Write an SEO audit summary to `docs/tasks/frontend/DD-MM-YYYY/<semantic-seo-id>/README.md` covering:
+- Before/after findings for each area (meta tags, structured data, Core Web Vitals, accessibility)
+- Implementation decisions and trade-offs
+- Remaining items for follow-up
 
 $ARGUMENTS

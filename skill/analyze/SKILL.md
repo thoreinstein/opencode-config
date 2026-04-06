@@ -1,139 +1,107 @@
 ---
 name: analyze
-description: Deep analysis mode - thorough multi-phase investigation with expert consultation
+description: "Multi-phase deep analysis of code, architecture, or systems with parallel reconnaissance and structured findings. Use when investigating bugs, evaluating architecture, auditing security, assessing performance, or reviewing code quality across a codebase."
 ---
 
-# DEEP ANALYSIS MODE
+# Deep Analysis
 
-**Current Time:** !`date`
+Perform a comprehensive, multi-phase analysis of: **$ARGUMENTS**
 
-Perform a comprehensive analysis using multi-phase expert consultation and parallel research.
+## Workflow
 
-## Analysis Protocol
+### Step 1: Reconnaissance
 
-### Phase 1: Reconnaissance (Parallel Swarm)
-
-Launch immediately:
+Launch parallel exploration to map the problem space:
 
 ```
-background_task(agent="explore", prompt="Map relevant code structure...")
-background_task(agent="explore", prompt="Find related patterns...")
-background_task(agent="librarian", prompt="Research best practices for...")
+background_task(agent="explore", prompt="Map relevant code structure for $ARGUMENTS")
+background_task(agent="explore", prompt="Find related patterns and dependencies for $ARGUMENTS")
 ```
 
-While swarm runs, use direct tools:
+While background tasks run, use direct tools to build initial context:
 
-- `glob` to find relevant files
-- `grep` to identify patterns
-- `read` to understand key code
+```bash
+# Find relevant files
+glob "**/*<target>*"
 
-### Phase 2: Expert Analysis
+# Identify usage patterns
+grep -rn "<target-pattern>" src/ --include="*.go" --include="*.ts" | head -30
 
-Based on findings, consult specialists:
+# Read key entry points
+read <main-file-path>
+```
 
-| Domain       | Agent        | Focus                                   |
-| ------------ | ------------ | --------------------------------------- |
-| Architecture | `@architect` | System design, data flow, dependencies  |
-| Security     | `@security`  | Vulnerabilities, threat model, risks    |
-| Reliability  | `@sre`       | Scalability, SLOs, observability        |
-| Performance  | `@perf`      | Profiling, bottlenecks, optimization    |
-| Patterns     | `@principal` | Code quality, best practices, tradeoffs |
+### Step 2: Focused Analysis
 
-### Phase 3: Deep Dive
+Examine the target across six dimensions. For each, produce concrete findings with file paths and line numbers:
 
-Analyze comprehensively:
+| Dimension | Focus |
+|-----------|-------|
+| **Correctness** | Logic errors, edge cases, unhandled states, wrong assumptions |
+| **Security** | Input validation gaps, auth issues, data exposure, injection risks |
+| **Performance** | Algorithmic complexity, N+1 queries, missing caches, resource leaks |
+| **Reliability** | Error handling gaps, failure modes without recovery, missing retries |
+| **Maintainability** | Tight coupling, code duplication, unclear naming, missing abstractions |
+| **Testability** | Untested paths, hard-to-mock dependencies, missing integration tests |
 
-- Edge cases and potential failure modes
-- Performance implications under load
-- Security attack surface
-- Error handling completeness
-- Testability and maintainability
-- Technical debt assessment
+For each finding, record:
+- **Location**: file path and line number
+- **Issue**: what is wrong and why it matters
+- **Severity**: P0 (critical) / P1 (high) / P2 (medium)
+- **Suggestion**: concrete fix or mitigation
 
-### Phase 4: Synthesis
+### Step 3: Synthesize Findings
 
-Combine findings into actionable output:
+Structure the output as:
 
 ```markdown
 ## Executive Summary
-
-[2-3 sentences: key findings and recommendation]
-
-## Detailed Analysis
-
-### Architecture
-
-[Component analysis, data flow, dependencies]
-
-### Code Quality
-
-[Patterns, anti-patterns, maintainability]
-
-### Security
-
-[Vulnerabilities, risks, compliance]
-
-### Performance
-
-[Bottlenecks, scalability concerns]
+[2–3 sentences: key findings and top recommendation]
 
 ## Issues Found
 
 ### Critical (P0)
-
-- [Issue with location and impact]
+- **[Issue title]** (`path/to/file.go:42`) — [Description and impact]
 
 ### High (P1)
-
-- [Issue]
+- **[Issue title]** (`path/to/file.go:108`) — [Description and impact]
 
 ### Medium (P2)
-
-- [Issue]
+- **[Issue title]** (`path/to/file.go:205`) — [Description and impact]
 
 ## Recommendations
-
 ### Immediate Actions
-
-1. [Action with rationale]
+1. [Action] — [Rationale and expected impact]
 
 ### Short-term Improvements
-
-1. [Improvement]
+1. [Improvement] — [Rationale]
 
 ### Long-term Considerations
-
-1. [Consideration]
-
-## Trade-offs
-
-[Analysis of different approaches with pros/cons]
+1. [Consideration] — [Trade-offs]
 ```
 
-## Analysis Focus Areas
+### Step 4: Validate Findings
 
-| Area                | What to Examine                         |
-| ------------------- | --------------------------------------- |
-| **Correctness**     | Logic errors, edge cases, assumptions   |
-| **Security**        | Input validation, auth, data protection |
-| **Performance**     | Complexity, caching, resource usage     |
-| **Reliability**     | Error handling, failure modes, recovery |
-| **Maintainability** | Readability, coupling, documentation    |
-| **Testability**     | Coverage, mocking, isolation            |
+Before finalizing, verify each finding:
+- Re-read the code at the cited location to confirm the issue exists.
+- Check whether the issue is already handled elsewhere (guard clauses, middleware, tests).
+- Remove false positives.
 
-## Output
+### Step 5: Output to Obsidian
 
-Write to Obsidian via `obsidian_append_content` at:
+Write the analysis to Obsidian via `obsidian_append_content` at:
 `$OBSIDIAN_PATH/Analysis/YYYY-MM-DD-target.md`
 
 > **Note**: `$OBSIDIAN_PATH` must be a vault-relative path (e.g., `Projects/myapp`), set per-project via direnv. The `obsidian_append_content` tool expects paths relative to the vault root.
 
-### Document Structure
+Use the template at `@~/.config/opencode/templates/analysis-report.md` for document structure.
 
-Use this template for the Obsidian document:
+## Example
 
-@~/.config/opencode/templates/analysis-report.md
+```bash
+/analyze the authentication middleware in cmd/api/middleware/
+```
 
-## Analyze
+Expected output: An executive summary identifying 2 critical issues (e.g., missing token expiry validation, SQL injection in user lookup), 3 high-priority items, and a prioritized action plan with specific file references.
 
 $ARGUMENTS

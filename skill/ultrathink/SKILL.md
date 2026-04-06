@@ -1,176 +1,106 @@
 ---
 name: ultrathink
-description: Ultra-deep multi-perspective analysis for complex architectural and strategic decisions
+description: "Multi-perspective deep analysis for complex architectural and strategic decisions. Use when evaluating migration strategies, choosing technology stacks, designing system architecture, or making high-stakes technical decisions that need rigorous multi-angle reasoning."
 ---
 
-# Deep Analysis and Problem Solving Mode
+# Ultra Think — Deep Analysis Mode
 
-**Current Time:** !`date`
+Perform deep, multi-perspective analysis on: **$ARGUMENTS**
 
-Deep analysis and problem solving mode
+## Workflow
 
-## Instructions
+### Step 1: Frame the Problem
 
-1. **Initialize Ultra Think Mode**
-   - Acknowledge the request for enhanced analytical thinking
-   - Set context for deep, systematic reasoning
-   - Prepare to explore the problem space comprehensively
+1. Extract the core challenge and restate it precisely.
+2. Identify stakeholders, constraints, and implicit requirements.
+3. List assumptions — mark each as verified or unverified.
+4. Define what a successful outcome looks like (measurable criteria if possible).
 
-2. **Parse the Problem or Question**
-   - Extract the core challenge from: **$ARGUMENTS**
-   - Identify all stakeholders and constraints
-   - Recognize implicit requirements and hidden complexities
-   - Question assumptions and surface unknowns
+### Step 2: Multi-Perspective Analysis
 
-3. **Multi-Dimensional Analysis**
-   Approach the problem from multiple angles:
+Analyze the problem from four perspectives, spending roughly equal effort on each:
 
-   ### Technical Perspective
-   - Analyze technical feasibility and constraints
-   - Consider scalability, performance, and maintainability
-   - Evaluate security implications
-   - Assess technical debt and future-proofing
+**Technical** — Feasibility, scalability, performance, security, maintainability, technical debt.
 
-   ### Business Perspective
-   - Understand business value and ROI
-   - Consider time-to-market pressures
-   - Evaluate competitive advantages
-   - Assess risk vs. reward trade-offs
+**Business** — ROI, time-to-market, competitive impact, risk tolerance, resource cost.
 
-   ### User Perspective
-   - Analyze user needs and pain points
-   - Consider usability and accessibility
-   - Evaluate user experience implications
-   - Think about edge cases and user journeys
+**User** — Needs, pain points, accessibility, edge-case user journeys.
 
-   ### System Perspective
-   - Consider system-wide impacts
-   - Analyze integration points
-   - Evaluate dependencies and coupling
-   - Think about emergent behaviors
+**System** — Integration points, dependencies, coupling, emergent behaviors, failure domains.
 
-4. **Generate Multiple Solutions**
-   - Brainstorm at least 3-5 different approaches
-   - For each approach, consider:
-     - Pros and cons
-     - Implementation complexity
-     - Resource requirements
-     - Potential risks
-     - Long-term implications
-   - Include both conventional and creative solutions
-   - Consider hybrid approaches
+For each perspective, produce 2–3 key findings with supporting evidence from the codebase or research.
 
-5. **Deep Dive Analysis**
-   For the most promising solutions:
-   - Create detailed implementation plans
-   - Identify potential pitfalls and mitigation strategies
-   - Consider phased approaches and MVPs
-   - Analyze second and third-order effects
-   - Think through failure modes and recovery
+### Step 3: Generate Solution Options
 
-6. **Cross-Domain Thinking**
-   - Draw parallels from other industries or domains
-   - Apply design patterns from different contexts
-   - Consider biological or natural system analogies
-   - Look for innovative combinations of existing solutions
+Produce at least 3 distinct approaches. For each option:
 
-7. **Challenge and Refine**
-   - Play devil's advocate with each solution
-   - Identify weaknesses and blind spots
-   - Consider "what if" scenarios
-   - Stress-test assumptions
-   - Look for unintended consequences
+| Dimension | Detail |
+|-----------|--------|
+| **Description** | One-paragraph summary of the approach |
+| **Pros** | Concrete advantages with evidence |
+| **Cons** | Concrete disadvantages and risks |
+| **Complexity** | Low / Medium / High — with justification |
+| **Timeline** | Rough effort estimate (days/weeks) |
+| **Reversibility** | Easy / Hard — cost of changing course later |
 
-8. **Synthesize Insights**
-   - Combine insights from all perspectives
-   - Identify key decision factors
-   - Highlight critical trade-offs
-   - Summarize innovative discoveries
-   - Present a nuanced view of the problem space
+Include at least one unconventional or hybrid approach.
 
-9. **Provide Structured Recommendations**
-   Present findings in a clear structure:
+### Step 4: Stress-Test Top Options
 
-   ```
-   ## Problem Analysis
-   - Core challenge
-   - Key constraints
-   - Critical success factors
+For the 1–2 most promising options:
 
-   ## Solution Options
-   ### Option 1: [Name]
-   - Description
-   - Pros/Cons
-   - Implementation approach
-   - Risk assessment
+1. **Devil's advocate** — Argue against the option. What breaks under pressure?
+2. **Second-order effects** — What happens 6–12 months after adoption?
+3. **Failure modes** — How does it fail? What is the blast radius? How do you recover?
+4. **"What if" scenarios** — Changed requirements, 10x load, team turnover, dependency deprecation.
 
-   ### Option 2: [Name]
-   [Similar structure]
+### Step 5: Synthesize and Recommend
 
-   ## Recommendation
-   - Recommended approach
-   - Rationale
-   - Implementation roadmap
-   - Success metrics
-   - Risk mitigation plan
+Structure the final output:
 
-   ## Alternative Perspectives
-   - Contrarian view
-   - Future considerations
-   - Areas for further research
-   ```
+```markdown
+## Problem Analysis
+- Core challenge: [one sentence]
+- Key constraints: [list]
+- Success criteria: [measurable]
 
-10. **Meta-Analysis**
-    - Reflect on the thinking process itself
-    - Identify areas of uncertainty
-    - Acknowledge biases or limitations
-    - Suggest additional expertise needed
-    - Provide confidence levels for recommendations
+## Solution Options
+### Option 1: [Name]
+[Table from Step 3]
 
-## Usage Examples
+### Option 2: [Name]
+[Table from Step 3]
 
-```bash
-# Architectural decision
-/project:ultra-think Should we migrate to microservices or improve our monolith?
+### Option 3: [Name]
+[Table from Step 3]
 
-# Complex problem solving
-/project:ultra-think How do we scale our system to handle 10x traffic while reducing costs?
+## Recommendation
+- **Recommended approach**: [Name]
+- **Rationale**: [Why this wins given constraints]
+- **Implementation roadmap**: [Phased steps]
+- **Key risks and mitigations**: [Top 3]
+- **Confidence level**: [High/Medium/Low with reasoning]
 
-# Strategic planning
-/project:ultra-think What technology stack should we choose for our next-gen platform?
-
-# Design challenge
-/project:ultra-think How can we improve our API to be more developer-friendly while maintaining backward compatibility?
+## Open Questions
+- [Unresolved items needing further input]
+- [Areas where additional expertise would help]
 ```
 
-## Key Principles
+### Step 6: Output to Obsidian
 
-- **First Principles Thinking**: Break down to fundamental truths
-- **Systems Thinking**: Consider interconnections and feedback loops
-- **Probabilistic Thinking**: Work with uncertainties and ranges
-- **Inversion**: Consider what to avoid, not just what to do
-- **Second-Order Thinking**: Consider consequences of consequences
-
-## Output
-
-Write to Obsidian via `obsidian_append_content` at:
+Write the analysis to Obsidian via `obsidian_append_content` at:
 `$OBSIDIAN_PATH/Thinking/YYYY-MM-DD-ultrathink-topic.md`
 
 > **Note**: `$OBSIDIAN_PATH` must be a vault-relative path (e.g., `Projects/myapp`), set per-project via direnv. The `obsidian_append_content` tool expects paths relative to the vault root.
 
-### Document Structure
+Use the template at `@~/.config/opencode/templates/thinking-session.md` for document structure.
 
-Use this template for the Obsidian document:
+## Example
 
-@~/.config/opencode/templates/thinking-session.md
+```bash
+/ultrathink Should we migrate the billing service from the monolith to a standalone microservice?
+```
 
-### Output Expectations
-
-- Comprehensive analysis (typically 2-4 pages of insights)
-- Multiple viable solutions with trade-offs
-- Clear reasoning chains
-- Acknowledgment of uncertainties
-- Actionable recommendations
-- Novel insights or perspectives
+Expected output: A structured analysis covering technical feasibility (API surface, data coupling), business impact (billing downtime risk, team capacity), user impact (checkout latency), and system impact (new deployment pipeline, observability gaps) — with 3+ options, a recommendation, and an implementation roadmap.
 
 $ARGUMENTS
